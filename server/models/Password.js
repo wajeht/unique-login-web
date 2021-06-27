@@ -1,122 +1,63 @@
 class Password {
-    // private variable
-    static #defaultPassword =
-        'abcdefghijklmnopqrstuvwxyz!@#$%^&*-.ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-    static #upercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    static #lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    static #number = '1234567890';
-    static #special = '!@#$%^&*-.';
+    #mixedCharacter = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-.ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    #length = 14;
+    #uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    #lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    #number = '1234567890';
+    #special = '!@#$%^&*-.';
 
-    // public variable
-    static defaultLength = 14;
-    static isUppercase = false;
-    static isLowercase = false;
-    static isNumber = false;
-    static isSpecial = false;
-
-    static #getRandomUppercase() {
-        let result = '';
-        const upperCase = this.#upercase;
-        const passwordLength = this.defaultLength;
-        const upperCaseLength = this.#upercase.length;
-
-        for (let i = 0; i < passwordLength; i++) {
-            const randomNumber = Math.floor(Math.random() * upperCaseLength);
-            result += upperCase[randomNumber];
+    /**
+     * This will take in object is paramenter to initialize variables.
+     * but length will be always available
+     * @param {Object} config
+     */
+    constructor(
+        config = {
+            length: this.#length,
+            uppercase: true,
+            lowercase: true,
+            number: true,
+            special: true,
         }
+    ) {
+        // Always set the password length no matter what
+        config.length ? (this.length = config.length) : (this.length = this.#length);
 
-        return result;
+        // Only enable the field which user defined
+        if (config.uppercase) this.uppercase = config.uppercase;
+        if (config.lowercase) this.lowercase = config.lowercase;
+        if (config.number) this.number = config.number;
+        if (config.special) this.special = config.special;
     }
 
-    static #getRandomLowercase() {
-        let result = '';
-        const lowerCase = this.#lowercase;
-        const passwordLength = this.defaultLength;
-        const lowerCaseLength = this.#lowercase.length;
+    /**
+     * This will return random password with the respect to passed
+     * in values from constructor
+     * @returns password
+     */
+    getPassword() {
+        const array = Object.keys(this);
+        let length = this.#length;
+        let string = '';
+        let password = '';
 
-        for (let i = 0; i < passwordLength; i++) {
-            const randomNumber = Math.floor(Math.random() * lowerCaseLength);
-            result += lowerCase[randomNumber];
+        length = array.includes('length') ? (length = this.length) : this.#length;
+
+        // check which field user has it enabled, then combine them as one
+        string = array.includes('uppercase') ? (string = this.#uppercase) : '';
+        string += array.includes('lowercase') ? (string = this.#lowercase) : '';
+        string += array.includes('number') ? (string = this.#number) : '';
+        string += array.includes('special') ? (string = this.#special) : '';
+        string += array.length == 1 ? (string = this.#mixedCharacter) : '';
+
+        // then generate random character from that combined string and
+        // concat up to the lengh of password
+        for (let i = 0; i < length; i++) {
+            const random = Math.floor(Math.random() * string.length);
+            password += string[random];
         }
 
-        return result;
-    }
-
-    static #getRandomNumber() {
-        let result = '';
-        const number = this.#number;
-        const passwordLength = this.defaultLength;
-        const numberLength = this.#number.length;
-
-        for (let i = 0; i < passwordLength; i++) {
-            const randomNumber = Math.floor(Math.random() * numberLength);
-            result += number[randomNumber];
-        }
-
-        return result;
-    }
-
-    static #getRandomSpecial() {
-        let result = '';
-        const special = this.#special;
-        const passwordLength = this.defaultLength;
-        const specialLength = this.#special.length;
-
-        for (let i = 0; i < passwordLength; i++) {
-            const randomNumber = Math.floor(Math.random() * specialLength);
-            result += special[randomNumber];
-        }
-
-        return result;
-    }
-
-    static #getDefaultPassword() {
-        let result = '';
-        const defaultPassword = this.#defaultPassword;
-        const passwordLength = this.defaultLength;
-        const defaultPasswordLengh = this.#defaultPassword.length;
-
-        for (let i = 0; i < passwordLength; i++) {
-            const randomNumber = Math.floor(Math.random() * defaultPasswordLengh);
-            result += defaultPassword[randomNumber];
-        }
-
-        return result;
-    }
-
-    static getPassword() {
-        let list = [];
-        let result = '';
-        const length = this.defaultLength;
-
-        // if user check specific option, add it to the list
-        if (this.isUppercase) {
-            list.push(this.#getRandomUppercase());
-        }
-        if (this.isLowercase) {
-            list.push(this.#getRandomLowercase());
-        }
-        if (this.isNumber) {
-            list.push(this.#getRandomNumber());
-        }
-        if (this.isSpecial) {
-            list.push(this.#getRandomSpecial());
-        }
-
-        // if there are more than one in the list, we can start randomizing
-        if (list.length > 1) {
-            const mixedPassword = list.join('');
-            const mixedPasswordLength = mixedPassword.length;
-
-            for (let i = 0; i < length; i++) {
-                result += mixedPassword[Math.floor(Math.random() * mixedPasswordLength)];
-            }
-        } else {
-            // if the list is empt then, we can just return defualt random password
-            result = this.#getDefaultPassword();
-        }
-
-        return result;
+        return password;
     }
 }
 
