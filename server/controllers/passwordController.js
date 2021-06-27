@@ -1,41 +1,42 @@
 const Password = require('../models/Password.js');
 
-// exports.getDefaultPassword = (req, res) => {
-//     res.json({
-//         password: Password.getPassword(),
-//     });
-// };
-
-exports.getDefaultPasswordByLength = (req, res) => {
-    const { length } = req.params;
-    Password.defaultLength = length;
-
+exports.getDefaultPassword = (req, res) => {
+    const password = new Password();
     res.json({
-        password: Password.getPassword(),
+        password: password.getPassword(),
     });
 };
 
-// exports.getDefaultPasswordByParam = (req, res) => {
-//     const { param } = req.params;
-//     console.log(param);
-// };
+exports.getDefaultPasswordByLength = (req, res) => {
+    const { length } = req.params;
+    const password = new Password({
+        length: length,
+    });
+
+    res.json({
+        password: password.getPassword(),
+    });
+};
+
+exports.getDefaultPasswordByParam = (req, res) => {
+    const { param } = req.params;
+    const password = new Password({
+        [param]: true,
+    });
+
+    res.json({
+        password: password.getPassword(),
+    });
+};
 
 exports.getPasswordByLengthAndParam = (req, res) => {
     const { length, param } = req.params;
+    const password = new Password({
+        length: length,
+        [param]: true,
+    });
 
-    Password.defaultLength = length;
-    Password.isUppercase = param;
-
-    if (param === 'uppercase') {
-        Password.isUppercase = true;
-    } else if (param === 'lowercase') {
-        Password.isLowercase = true;
-    } else if (param === 'number') {
-        Password.isNumber = true;
-    } else if (param === 'special') {
-        Password.isSpecial = true;
-    }
     res.json({
-        password: Password.getPassword(),
+        password: password.getPassword(),
     });
 };
