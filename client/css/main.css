@@ -1,0 +1,17 @@
+body {
+    background-color: cornflowerblue;
+}
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    height: 500px;
+    width: 300px;
+    text-align: center;
+}
