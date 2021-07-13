@@ -11,9 +11,6 @@ const passwordLength = document.getElementById('passwordLength');
 let passwordOption = [];
 let passwordlengthOption = [];
 
-// api
-const apiURL = 'http://localhost:6968/password/';
-
 /**
  * This function will hides the resultbox when dom load
  */
@@ -65,7 +62,7 @@ function getPasswordLengthValue() {
 function getUserInputIntoAPIURL() {
     const length = getPasswordLengthValue();
     const params = passwordOption.join('/');
-    return `${apiURL}${length}/${params}`;
+    return `${window.location.href}password/${length}/${params}`;
 }
 
 /**
