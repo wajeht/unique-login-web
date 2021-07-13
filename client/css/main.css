@@ -1,6 +1,24 @@
-body {
-    background-color: cornflowerblue;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;1,100&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+body {
+    background: #dfeeff;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h2 {
+    margin: 5px 0;
+}
+
+img {
+    width: 100%;
+}
+
 .container {
     display: flex;
     height: 100vh;
@@ -9,9 +27,77 @@ body {
 }
 
 .card {
+    padding: 25px;
     background-color: white;
     border-radius: 5px;
-    height: 500px;
-    width: 300px;
+    height: fit-content;
+    width: 500px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.logo {
+    width: 50%;
+    /* background-color: orange; */
+    margin: 20px;
+}
+
+.options {
+    display: flex;
+    /* background-color: gray; */
+    margin-bottom: 10px;
+}
+
+input {
+    margin-left: 15px;
+}
+
+.password {
+    margin: 0 15px;
+}
+
+.username {
+    margin: 0 15px;
+}
+
+.password-input {
+    /* background-color: green; */
+    margin-bottom: 10px;
+}
+
+.generate {
+    margin: 20px;
+}
+
+.generate button {
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #037aff;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+}
+
+.generate button:hover {
+    background-color: #469eff;
+}
+
+.result {
+    /* background-color: #e8e8e7; */
+    background-color: #d4e8ff;
+    width: 100%;
+    height: fit-content;
     text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+
+    margin-bottom: 23px;
 }

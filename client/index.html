@@ -14,14 +14,61 @@
 <body>
 	<div class="container">
 		<div class="card">
-			<h2>Yes</h2>
-			<p>This page is under construction!</p>
-			<button id="generate">Generate</button>
-			<p id="output"></p>
+
+			<!-- ---------- logo ---------- -->
+			<div class="logo">
+				<img src="images/logo.png" alt="">
+			</div>
+
+			<!-- ---------- option ---------- -->
+			<div class="options">
+				<div class="password">
+					<h2>Password</h2>
+					<input type="checkbox" id="uppercase" name="uppercase" value="uppercase"
+						   onclick="getPasswordCheckboxValue(this)">
+					<label for="vehicle1">Uppercase (A-Z)</label><br>
+					<input type="checkbox" id="lowercase" name="lowercase" value="lowercase"
+						   onclick="getPasswordCheckboxValue(this)">
+					<label for="vehicle2">Lowercase (a-z)</label><br>
+					<input type="checkbox" id="number" name="number" value="number"
+						   onclick="getPasswordCheckboxValue(this)">
+					<label for="vehicle3">Number (0-9)</label><br>
+					<input type="checkbox" id="special" name="special" value="special"
+						   onclick="getPasswordCheckboxValue(this)">
+					<label for="vehicle3">Special (!@#$%^&*-.)</label><br><br>
+				</div>
+				<div class="username">
+					<h2>Username</h2>
+					<input type="checkbox" id="animal" name="animal" value="animal">
+					<label for="vehicle1">Animal</label><br>
+					<input type="checkbox" id="verb" name="verb" value="verb">
+					<label for="vehicle2">Verb</label><br>
+					<input type="checkbox" id="noun" name="noun" value="noun">
+					<label for="vehicle3">Noun</label><br>
+					<input type="checkbox" id="adjective" name="adjective" value="adjective">
+					<label for="vehicle3">Adjective</label><br><br>
+				</div>
+			</div>
+
+			<!-- ---------- password length ---------- -->
+			<div class="password-input">
+				<label for="number">Length: </label><input type="number" name="passwordLength"
+					   id="passwordLength" value="12">
+			</div>
+
+			<!-- ---------- generate ---------- -->
+			<div class="generate">
+				<button id="generate">Generate</button>
+			</div>
+
+			<!-- ---------- result ---------- -->
+			<div class="result">
+			</div>
 		</div>
 	</div>
 
 	<script src="./js/index.js"></script>
+	<script type="text/javascript" src="http://livejs.com/live.js"></script>
 </body>
 
 </html>
