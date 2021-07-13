@@ -12,7 +12,7 @@ let passwordOption = [];
 let passwordlengthOption = [];
 
 // api
-const apiURL = 'http://localhost:3000/password/';
+const apiURL = 'http://localhost:6968/password/';
 
 /**
  * This function will hides the resultbox when dom load
