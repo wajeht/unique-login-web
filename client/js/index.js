@@ -17,7 +17,7 @@ let passwordlengthOption = [];
 function hideResultBoxOnDomLoad() {
     window.addEventListener('DOMContentLoaded', (event) => {
         resultBox.style.background = 'white';
-        resultBox.innerHTML = '‏‎ ‎‏‎ ‎‏‎ ‎‏‎ ‎‏‎ ‎‏‎ ‎‏‎ ‎';
+        resultBox.innerHTML = '‏‎ ';
     });
 }
 
@@ -62,7 +62,8 @@ function getPasswordLengthValue() {
 function getUserInputIntoAPIURL() {
     const length = getPasswordLengthValue();
     const params = passwordOption.join('/');
-    return `${window.location.href}password/${length}/${params}`;
+    // return `${window.location.href}password/${length}/${params}`; // productoin
+    return `http://localhost:6968/password/${length}/${params}`; // development
 }
 
 /**
