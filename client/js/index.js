@@ -139,6 +139,9 @@ function generate() {
     generateButton.addEventListener('click', () => {
         fetchData().then((res) => {
             const { password, username } = res;
+
+            console.log('generate()', res);
+
             showResultBox(password, username);
         });
     });
