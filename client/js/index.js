@@ -97,15 +97,15 @@ function getUserInputIntoAPIURL() {
     //     `${window.location.href}username/${usernameParams}`
     // );
 
-    // return {
-    //     passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
-    //     usernameAPI: `${window.location.href}username/${usernameParams}`,
-    // };
-
     return {
-        passwordAPI: `http://localhost:6968/password/${length}/${passwordParams}`,
-        usernameAPI: `http://localhost:6968/username/${usernameParams}`,
+        passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
+        usernameAPI: `${window.location.href}username/${usernameParams}`,
     };
+
+    // return {
+    //     passwordAPI: `http://localhost:6968/password/${length}/${passwordParams}`,
+    //     usernameAPI: `http://localhost:6968/username/${usernameParams}`,
+    // };
 }
 
 /**
