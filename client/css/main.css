@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 * {
     padding: 0;
@@ -7,13 +7,14 @@
 }
 
 body {
-    /* background: #dfeeff; */
-    background-color: #e2e1e0;
-    font-family: 'Fira Sans', sans-serif;
+    background-color: #e8e8e8;
+    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
+    color: #1c1c1c;
     margin: 5px 0;
+    font-weight: 400;
 }
 
 img {
@@ -31,43 +32,66 @@ img {
     padding: 25px;
     background-color: white;
     border-radius: 5px;
-    height: fit-content;
-    width: 500px;
+    /* height: fit-content; */
+    /* width: 500px; */
 
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    /* align-items: center; */
+
     align-items: center;
 
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* too much shadow */
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .logo {
     width: 50%;
     /* background-color: orange; */
-    margin: 20px;
+    margin: 15px;
 }
 
 .options {
     display: flex;
+    /* justify-content: space-between; */
     /* background-color: gray; */
-    margin-bottom: 10px;
 }
 
-input {
-    margin-left: 15px;
+label {
+    color: #595959;
+}
+
+input[type='number'] {
+    width: 320px;
+    padding: 10px;
+    border-radius: 5px;
+    border: #e8e8e8 2px solid;
+}
+
+input:focus {
+    outline: none;
 }
 
 .password {
     margin: 0 15px;
+    /* background-color: yellow; */
+}
+
+.password-checkedbox {
+    margin-left: 15px;
 }
 
 .username {
     margin: 0 15px;
+    /* background-color: red; */
 }
 
-.password-input {
-    /* background-color: green; */
+.username-checkedbox {
+    margin-left: 15px;
+}
+
+.password-input h2 {
     margin-bottom: 10px;
 }
 
@@ -76,14 +100,16 @@ input {
 }
 
 .generate button {
-    width: 120px;
-    height: 30px;
+    width: 320px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     background-color: #037aff;
     color: white;
     cursor: pointer;
     font-size: large;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 .generate button:hover {
@@ -91,9 +117,8 @@ input {
 }
 
 .result {
-    /* background-color: #e8e8e7; */
     background-color: #d4e8ff;
-    width: 100%;
+    width: 320px;
     height: fit-content;
     text-align: center;
     padding: 15px;

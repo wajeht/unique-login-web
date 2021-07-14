@@ -24,36 +24,40 @@
 			<div class="options">
 				<div class="password">
 					<h2>Password</h2>
-					<input type="checkbox" id="uppercase" name="uppercase" value="uppercase"
-						   onclick="getPasswordCheckboxValue(this)">
-					<label for="vehicle1">Uppercase (A-Z)</label><br>
-					<input type="checkbox" id="lowercase" name="lowercase" value="lowercase"
-						   onclick="getPasswordCheckboxValue(this)">
-					<label for="vehicle2">Lowercase (a-z)</label><br>
-					<input type="checkbox" id="number" name="number" value="number"
-						   onclick="getPasswordCheckboxValue(this)">
-					<label for="vehicle3">Number (0-9)</label><br>
-					<input type="checkbox" id="special" name="special" value="special"
-						   onclick="getPasswordCheckboxValue(this)">
-					<label for="vehicle3">Special (!@#$%^&*-.)</label><br><br>
+					<div class="password-checkedbox">
+						<input type="checkbox" id="uppercase" name="uppercase" value="uppercase"
+							   onclick="getPasswordCheckboxValue(this)">
+						<label for="vehicle1">Uppercase (A-Z)</label><br>
+						<input type="checkbox" id="lowercase" name="lowercase" value="lowercase"
+							   onclick="getPasswordCheckboxValue(this)">
+						<label for="vehicle2">Lowercase (a-z)</label><br>
+						<input type="checkbox" id="number" name="number" value="number"
+							   onclick="getPasswordCheckboxValue(this)">
+						<label for="vehicle3">Number (0-9)</label><br>
+						<input type="checkbox" id="special" name="special" value="special"
+							   onclick="getPasswordCheckboxValue(this)">
+						<label for="vehicle3">Special (!@#$%^&*-.)</label><br><br>
+					</div>
 				</div>
 				<div class="username">
 					<h2>Username</h2>
-					<input type="checkbox" id="animal" name="animal" value="animal">
-					<label for="vehicle1">Animal</label><br>
-					<input type="checkbox" id="verb" name="verb" value="verb">
-					<label for="vehicle2">Verb</label><br>
-					<input type="checkbox" id="noun" name="noun" value="noun">
-					<label for="vehicle3">Noun</label><br>
-					<input type="checkbox" id="adjective" name="adjective" value="adjective">
-					<label for="vehicle3">Adjective</label><br><br>
+					<div class="username-checkedbox">
+						<input type="checkbox" id="animal" name="animal" value="animal">
+						<label for="vehicle1">Animal</label><br>
+						<input type="checkbox" id="verb" name="verb" value="verb">
+						<label for="vehicle2">Verb</label><br>
+						<input type="checkbox" id="noun" name="noun" value="noun">
+						<label for="vehicle3">Noun</label><br>
+						<input type="checkbox" id="adjective" name="adjective" value="adjective">
+						<label for="vehicle3">Adjective</label><br><br>
+					</div>
 				</div>
 			</div>
 
 			<!-- ---------- password length ---------- -->
 			<div class="password-input">
-				<label for="number">Length: </label><input type="number" name="passwordLength"
-					   id="passwordLength" value="14">
+				<h2>Length</h2>
+				<input type="number" name="passwordLength" id="passwordLength" placeholder="14">
 			</div>
 
 			<!-- ---------- generate ---------- -->

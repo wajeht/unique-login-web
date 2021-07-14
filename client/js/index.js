@@ -26,7 +26,7 @@ function hideResultBoxOnDomLoad() {
  * @param {String} input
  */
 function showResultBox(input) {
-    resultBox.style.background = '#e8e8e7';
+    resultBox.style.background = '#F7F7F7';
     resultBox.innerHTML = input;
 }
 
@@ -60,7 +60,7 @@ function getPasswordLengthValue() {
  * @returns {String} Example: http://localhost:3000/20/uppercase
  */
 function getUserInputIntoAPIURL() {
-    const length = getPasswordLengthValue();
+    // const length = getPasswordLengthValue() ? NaN : 14;
     const params = passwordOption.join('/');
     // return `${window.location.href}password/${length}/${params}`; // productoin
     return `http://localhost:6968/password/${length}/${params}`; // development
