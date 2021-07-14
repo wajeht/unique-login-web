@@ -8,7 +8,7 @@ const usernameRoutes = require('./routes/usernameRouter.js');
 
 app.use(cors());
 app.use(express.json());
-app.use('/password', passwordRoutes);
-app.use('/username', usernameRoutes);
+app.use('/api/password', passwordRoutes);
+app.use('/api/username', usernameRoutes);
 
 module.exports = app;

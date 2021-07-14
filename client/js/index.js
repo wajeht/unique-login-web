@@ -98,8 +98,8 @@ function getUserInputIntoAPIURL() {
     );
 
     return {
-        passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
-        usernameAPI: `${window.location.href}username/${usernameParams}`,
+        passwordAPI: `${window.location.href}api/password/${length}/${passwordParams}`,
+        usernameAPI: `${window.location.href}api/username/${usernameParams}`,
     };
 
     // return {
