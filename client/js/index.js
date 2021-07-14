@@ -27,6 +27,17 @@ function hideResultBoxOnDomLoad() {
  */
 function showResultBox(input) {
     resultBox.style.background = '#F7F7F7';
+    resultBox.style.color = '#595959';
+    resultBox.innerHTML = input;
+}
+
+/**
+ * This function will spit out geneated err text into result box
+ * @param {String} input
+ */
+function showErrBox(input) {
+    resultBox.style.background = '#ECB0B0';
+    resultBox.style.color = '#ffffff';
     resultBox.innerHTML = input;
 }
 
@@ -80,7 +91,9 @@ function generate() {
                 const { password } = res;
                 showResultBox(password);
             })
-            .catch();
+            .catch((e) => {
+                showErrBox(e.message);
+            });
     });
 }
 
