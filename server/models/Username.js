@@ -1,10 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-
-// const animals = require('../data/animals.json');
-// const nouns = require('../data/nouns.json');
-// const adjectives = require('../data/adjectives.json');
-// const verbs = require('../data/verbs.json');
+const UsernameData = require('../data/index.js');
 
 class Username {
     /**
@@ -18,10 +12,10 @@ class Username {
             animals: true,
         }
     ) {
-        if (config.adjectives) this.adjectives = this.#getFileLink('animals.json');
-        if (config.verbs) this.verbs = this.#getFileLink('verbs.json');
-        if (config.nouns) this.nouns = this.#getFileLink('nouns.json');
-        if (config.animals) this.animals = this.#getFileLink('animals.json');
+        if (config.adjectives) this.adjectives = UsernameData.animals;
+        if (config.verbs) this.verbs = UsernameData.verbs;
+        if (config.nouns) this.nouns = UsernameData.nouns;
+        if (config.animals) this.animals = UsernameData.animals;
     }
 
     /**
@@ -36,17 +30,6 @@ class Username {
         username += 'animals' in this ? this.#getRandomElementFromAnArray(this.animals) : '';
 
         return username;
-    }
-
-    /**
-     * @param {Array}
-     */
-    #getFileLink(json) {
-        const readFile = JSON.parse(
-            fs.readFileSync(path.join(process.cwd(), 'data', json), 'utf8')
-        );
-
-        return readFile.slice(0);
     }
 
     /**

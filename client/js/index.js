@@ -92,10 +92,10 @@ function getUserInputIntoAPIURL() {
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
 
-    // console.log(
-    //     `${window.location.href}password/${length}/${passwordParams}`,
-    //     `${window.location.href}username/${usernameParams}`
-    // );
+    console.log(
+        `${window.location.href}password/${length}/${passwordParams}`,
+        `${window.location.href}username/${usernameParams}`
+    );
 
     return {
         passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
