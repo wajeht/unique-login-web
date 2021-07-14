@@ -91,6 +91,12 @@ function getUserInputIntoAPIURL() {
     const length = parseInt(getPasswordLengthValue()) || 14;
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
+    console.log({
+        'fetchData()': [
+            `${window.location.href}password/${length}/${passwordParams}`,
+            `${window.location.href}password/${usernameParams}`,
+        ],
+    });
     return {
         passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
         usernameAPI: `${window.location.href}password/${usernameParams}`,
@@ -113,6 +119,8 @@ async function fetchData() {
             fetch(passwordAPI).then((res) => res.json()),
             fetch(usernameAPI).then((res) => res.json()),
         ]);
+
+        console.log({ 'fetchData()': [password, username] });
         return {
             password: password.password,
             username: username.username,
