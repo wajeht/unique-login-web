@@ -92,15 +92,17 @@ function getUserInputIntoAPIURL() {
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
 
-    return {
-        passwordAPI: `${window.location.href}api/password/${length}/${passwordParams}`,
-        usernameAPI: `${window.location.href}api/username/${usernameParams}`,
-    };
-
+    // for production
     // return {
-    //     passwordAPI: `http://localhost:6968/api/password/${length}/${passwordParams}`,
-    //     usernameAPI: `http://localhost:6968/api/username/${usernameParams}`,
+    //     passwordAPI: `${window.location.href}api/password/${length}/${passwordParams}`,
+    //     usernameAPI: `${window.location.href}api/username/${usernameParams}`,
     // };
+
+    // for local development
+    return {
+        passwordAPI: `http://localhost:6968/api/password/${length}/${passwordParams}`,
+        usernameAPI: `http://localhost:6968/api/username/${usernameParams}`,
+    };
 }
 
 /**
