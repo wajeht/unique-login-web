@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+const compression = require('compression');
 const cors = require('cors');
 
 const passwordRoutes = require('./routes/passwordRouter.js');
