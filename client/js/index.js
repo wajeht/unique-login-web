@@ -62,8 +62,8 @@ function getPasswordLengthValue() {
 function getUserInputIntoAPIURL() {
     const length = parseInt(getPasswordLengthValue()) || 14;
     const params = passwordOption.join('/');
-    return `${window.location.href}password/${length}/${params}`; // productoin
-    // return `http://localhost:6968/password/${length}/${params}`; // development
+    // return `${window.location.href}password/${length}/${params}`; // productoin
+    return `http://localhost:6968/password/${length}/${params}`; // development
 }
 
 /**
