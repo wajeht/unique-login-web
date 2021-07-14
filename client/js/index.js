@@ -91,14 +91,14 @@ function getUserInputIntoAPIURL() {
     const length = parseInt(getPasswordLengthValue()) || 14;
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
-    return {
-        passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
-        usernameAPI: `${window.location.href}username/${usernameParams}`,
-    };
     // return {
-    //     passwordAPI: `http://localhost:6968/password/${length}/${passwordParams}`,
-    //     usernameAPI: `http://localhost:6968/username/${usernameParams}`,
+    //     passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
+    //     usernameAPI: `${window.location.href}username/${usernameParams}`,
     // };
+    return {
+        passwordAPI: `http://localhost:6968/password/${length}/${passwordParams}`,
+        usernameAPI: `http://localhost:6968/username/${usernameParams}`,
+    };
 }
 
 /**
