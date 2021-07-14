@@ -19,10 +19,10 @@ exports.getDefaultPasswordByLength = (req, res) => {
 };
 
 exports.getPasswordByLengthAndOneParam = (req, res) => {
-    const { length, param } = req.params;
+    const { length, one } = req.params;
     const password = new Password({
         length: length,
-        [param]: true,
+        [one]: true,
     });
 
     res.json({
