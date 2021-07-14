@@ -91,15 +91,9 @@ function getUserInputIntoAPIURL() {
     const length = parseInt(getPasswordLengthValue()) || 14;
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
-    console.log({
-        'fetchData()': [
-            `${window.location.href}password/${length}/${passwordParams}`,
-            `${window.location.href}password/${usernameParams}`,
-        ],
-    });
     return {
         passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
-        usernameAPI: `${window.location.href}password/${usernameParams}`,
+        usernameAPI: `${window.location.href}username/${usernameParams}`,
     };
     // return {
     //     passwordAPI: `http://localhost:6968/password/${length}/${passwordParams}`,
@@ -120,7 +114,6 @@ async function fetchData() {
             fetch(usernameAPI).then((res) => res.json()),
         ]);
 
-        console.log({ 'fetchData()': [password, username] });
         return {
             password: password.password,
             username: username.username,
@@ -139,7 +132,6 @@ function generate() {
     generateButton.addEventListener('click', () => {
         fetchData().then((res) => {
             const { password, username } = res;
-            console.log({ 'generate()': [password, username] });
             showResultBox(password, username);
         });
     });
