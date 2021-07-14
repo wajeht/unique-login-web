@@ -1,7 +1,10 @@
-const animals = require('../data/animals.json');
-const nouns = require('../data/nouns.json');
-const adjectives = require('../data/adjectives.json');
-const verbs = require('../data/verbs.json');
+const fs = require('fs');
+const path = require('path');
+
+// const animals = require('../data/animals.json');
+// const nouns = require('../data/nouns.json');
+// const adjectives = require('../data/adjectives.json');
+// const verbs = require('../data/verbs.json');
 
 class Username {
     /**
@@ -15,10 +18,10 @@ class Username {
             animals: true,
         }
     ) {
-        if (config.adjectives) this.adjectives = JSON.stringify(adjectives);
-        if (config.verbs) this.verbs = JSON.stringify(verbs);
-        if (config.nouns) this.nouns = JSON.stringify(nouns);
-        if (config.animals) this.animals = JSON.stringify(animals);
+        if (config.adjectives) this.adjectives = this.#getFileLink('animals.json');
+        if (config.verbs) this.verbs = this.#getFileLink('verbs.json');
+        if (config.nouns) this.nouns = this.#getFileLink('nouns.json');
+        if (config.animals) this.animals = this.#getFileLink('animals.json');
     }
 
     /**
@@ -37,10 +40,18 @@ class Username {
 
     /**
      * @param {Array}
+     */
+    #getFileLink(json) {
+        return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', json), 'utf8'));
+    }
+
+    /**
+     * @param {Array}
      * @returns {String}
      */
     #getRandomElementFromAnArray(array) {
-        const res = JSON.parse(array);
+        // const res = JSON.parse(array);
+        const res = array;
         const min = 0;
         const max = res.length - 1;
         const random = Math.floor(Math.random() * (max - min) + min);
