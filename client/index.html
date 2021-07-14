@@ -50,13 +50,17 @@
 				<div class="username">
 					<h2>Username</h2>
 					<div class="username-checkedbox">
-						<input type="checkbox" id="animal" name="animal" value="animal">
+						<input type="checkbox" id="animals" name="animals" value="animals"
+							   onclick="getUsernameCheckboxValue(this)">
 						<label for="vehicle1">Animal</label><br>
-						<input type="checkbox" id="verb" name="verb" value="verb">
+						<input type="checkbox" id="verbs" name="verbs" value="verbs"
+							   onclick="getUsernameCheckboxValue(this)">
 						<label for="vehicle2">Verb</label><br>
-						<input type="checkbox" id="noun" name="noun" value="noun">
+						<input type="checkbox" id="nouns" name="nouns" value="nouns"
+							   onclick="getUsernameCheckboxValue(this)">
 						<label for="vehicle3">Noun</label><br>
-						<input type="checkbox" id="adjective" name="adjective" value="adjective">
+						<input type="checkbox" id="adjectives" name="adjectives" value="adjectives"
+							   onclick="getUsernameCheckboxValue(this)">
 						<label for="vehicle3">Adjective</label><br><br>
 					</div>
 				</div>
@@ -75,6 +79,10 @@
 
 			<!-- ---------- result ---------- -->
 			<div class="result">
+				<p class="result__password">
+				</p>
+				<p class="result__username">
+				</p>
 			</div>
 		</div>
 	</div>

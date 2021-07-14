@@ -91,6 +91,10 @@ input:focus {
     margin-left: 15px;
 }
 
+.password-input input {
+    height: 40px;
+}
+
 .password-input h2 {
     margin-bottom: 10px;
 }
@@ -117,13 +121,22 @@ input:focus {
 }
 
 .result {
-    background-color: #d4e8ff;
     width: 320px;
-    height: fit-content;
-    text-align: center;
+    height: 68px;
+
+    background-color: #f7f7f7;
+    color: #595959;
     padding: 15px;
     border-radius: 5px;
     overflow-wrap: break-word;
 
     margin-bottom: 23px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.result p {
+    z-index: 1;
 }
