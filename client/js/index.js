@@ -60,7 +60,7 @@ function getPasswordLengthValue() {
  * @returns {String} Example: http://localhost:3000/20/uppercase
  */
 function getUserInputIntoAPIURL() {
-    const length = getPasswordLengthValue() ? NaN : 14;
+    const length = parseInt(getPasswordLengthValue()) || 14;
     const params = passwordOption.join('/');
     return `${window.location.href}password/${length}/${params}`; // productoin
     // return `http://localhost:6968/password/${length}/${params}`; // development
