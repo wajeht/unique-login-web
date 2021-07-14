@@ -42,7 +42,11 @@ class Username {
      * @param {Array}
      */
     #getFileLink(json) {
-        return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', json), 'utf8'));
+        const readFile = JSON.parse(
+            fs.readFileSync(path.join(process.cwd(), 'data', json), 'utf8')
+        );
+
+        return readFile.slice(0);
     }
 
     /**
