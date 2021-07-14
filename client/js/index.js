@@ -92,10 +92,10 @@ function getUserInputIntoAPIURL() {
     const passwordParams = passwordOption.join('/');
     const usernameParams = usernameOption.join('/');
 
-    console.log(
-        `${window.location.href}password/${length}/${passwordParams}`,
-        `${window.location.href}username/${usernameParams}`
-    );
+    // console.log(
+    //     `${window.location.href}password/${length}/${passwordParams}`,
+    //     `${window.location.href}username/${usernameParams}`
+    // );
 
     return {
         passwordAPI: `${window.location.href}password/${length}/${passwordParams}`,
@@ -137,14 +137,14 @@ async function fetchData() {
 function generate() {
     // btn 'generate' click
     generateButton.addEventListener('click', () => {
-        fetchData().then((res) => {
-            console.log('generate()', res);
-            console.log('test');
-
-            const { password, username } = res;
-
-            showResultBox(password, username);
-        });
+        fetchData()
+            .then((res) => {
+                const { password, username } = res;
+                showResultBox(password, username);
+            })
+            .catch((err) => {
+                showErrBox(err.message);
+            });
     });
 }
 
