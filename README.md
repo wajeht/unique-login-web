@@ -5,10 +5,6 @@
 # <p align="center">Unique Login</p>
 
 <p align="center">
-<a href="https://github.com/wajeht/windows_form_unique_login/releases"><img src="https://img.shields.io/github/downloads/wajeht/windows_form_unique_login/latest/total"></a> <a href="#"><img src="https://img.shields.io/github/v/release/wajeht/windows_form_unique_login"></a>
-
-</p>
-<p align="center">
 A simple over engineered full-stack web application that spits out unique login credentials 
 </p>
 
@@ -54,13 +50,16 @@ You must have Nodejs installed on your computer to have this project run locally
 
     ```
     npm run dev
-
     ```
 
 6. Now you can visit the following url on your browser.
     ```
     http://localhost:3000/
     ```
+
+# API end points
+
+soon!
 
 # Contribute
 
