@@ -147,7 +147,6 @@ input:focus {
 .result__password-flex {
     display: flex;
     justify-content: space-between;
-    overflow-x: scroll;
 }
 
 .result__username-flex {
@@ -157,6 +156,7 @@ input:focus {
 
 .result__input input {
     /* width: 100%; */
+    overflow-x: scroll;
     border: none;
     background-color: #f7f7f7;
 }
