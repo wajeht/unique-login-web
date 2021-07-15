@@ -77,6 +77,27 @@ button {
     margin: 15px;
 }
 
+.title {
+    color: #1c1c1c;
+    display: flex;
+}
+
+svg {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+svg:hover {
+    fill: #037aff;
+}
+
+.description {
+    color: #595959;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 15px;
+}
+
 .options {
     display: flex;
     /* justify-content: space-between; */
