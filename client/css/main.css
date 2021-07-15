@@ -11,6 +11,27 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+@media screen and (min-width: 300px) and (max-width: 500px) {
+    body {
+        background-color: white;
+        max-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: hidden;
+        box-shadow: none;
+        border-color: none;
+    }
+    .card {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none !important;
+        border-color: none;
+        width: auto;
+    }
+}
+
 h2 {
     color: #1c1c1c;
     margin: 5px 0;
