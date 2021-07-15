@@ -53,6 +53,7 @@ button {
     align-items: center;
 }
 
+/* -------------------- card -------------------- */
 .card {
     padding: 25px;
     background-color: white;
@@ -71,12 +72,14 @@ button {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+/* -------------------- logo -------------------- */
 .logo {
     width: 50%;
     /* background-color: orange; */
     margin: 15px;
 }
 
+/* -------------------- title & description -------------------- */
 .title {
     color: #1c1c1c;
     display: flex;
@@ -98,6 +101,7 @@ svg:hover {
     margin-bottom: 15px;
 }
 
+/* -------------------- option -------------------- */
 .options {
     display: flex;
     /* justify-content: space-between; */
@@ -119,6 +123,7 @@ input:focus {
     outline: none;
 }
 
+/* -------------------- passrd -------------------- */
 .password {
     margin: 0 15px;
     /* background-color: yellow; */
@@ -128,6 +133,7 @@ input:focus {
     margin-left: 15px;
 }
 
+/* -------------------- username -------------------- */
 .username {
     margin: 0 15px;
     /* background-color: red; */
@@ -145,6 +151,7 @@ input:focus {
     margin-bottom: 10px;
 }
 
+/* -------------------- gennerate -------------------- */
 .generate {
     margin: 20px;
 }
@@ -166,6 +173,7 @@ input:focus {
     background-color: #469eff;
 }
 
+/* -------------------- result -------------------- */
 .result {
     width: 320px;
 
