@@ -21,6 +21,10 @@ img {
     width: 100%;
 }
 
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
 .container {
     display: flex;
     height: 100vh;
@@ -122,7 +126,6 @@ input:focus {
 
 .result {
     width: 320px;
-    height: 68px;
 
     background-color: #f7f7f7;
     color: #595959;
@@ -137,6 +140,43 @@ input:focus {
     /* align-items: center; */
 }
 
-.result p {
-    z-index: 1;
+.result__input {
+    margin-left: 15px;
+}
+
+.result__password-flex {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+.result__username-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result__input input {
+    /* width: 100%; */
+    border: none;
+    background-color: #f7f7f7;
+}
+
+.result__input input[type='text'] {
+    color: #595959;
+    padding-left: 5px;
+    padding-top: 1px;
+}
+
+.result__input button {
+    margin: 1px 0;
+    padding: 0 5px;
+    background-color: #037aff;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.result__input button:hover {
+    background-color: #469eff;
 }

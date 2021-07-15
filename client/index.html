@@ -79,9 +79,20 @@
 
 			<!-- ---------- result ---------- -->
 			<div class="result">
-				<p class="result__password">
-				</p>
-				<p class="result__username">
+				<p class="result__brace">{
+				<div class="result__input">
+					<div class="result__username-flex">
+						<label for="username">username: </label>
+						<input type="text" id="password" class="result__password">
+						<button class="copy" onclick="copyPassword()">Copy</button>
+					</div>
+					<div class="result__password-flex">
+						<label for="username">password: </label>
+						<input type="text" id="username" class="result__username">
+						<button class="copy" onclick="copyUsername()">Copy</button>
+					</div>
+				</div>
+				}
 				</p>
 			</div>
 		</div>

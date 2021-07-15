@@ -8,6 +8,8 @@ const lowercase = document.getElementById('lowercase');
 const number = document.getElementById('number');
 const special = document.getElementById('special');
 const passwordLength = document.getElementById('passwordLength');
+const password = document.getElementById('password');
+const username = document.getElementById('username');
 
 // to store password and username options
 let usernameOption = [];
@@ -15,10 +17,29 @@ let passwordOption = [];
 let passwordlengthOption = [];
 
 /**
+ * This function will copy password into clipboard
+ */
+function copyPassword() {
+    password.select();
+    password.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+}
+
+/**
+ * This function will copy username into clipboard
+ */
+function copyUsername() {
+    username.select();
+    username.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+}
+
+/**
  * This function will hides the resultbox when dom load
  */
 function hideResultBoxOnDomLoad() {
     window.addEventListener('DOMContentLoaded', (event) => {
+        resultBox.style.height = '106px';
         resultBox.style.visibility = 'hidden';
         // resultBox.innerHTML = '‏‎ ';
     });
@@ -30,8 +51,12 @@ function hideResultBoxOnDomLoad() {
  */
 function showResultBox(password, username) {
     resultBox.style.visibility = 'visible';
-    resultBoxPassword.innerHTML = `<b>Password</b>: ${password}`;
-    resultBoxUsername.innerHTML = `<b>Username</b>: ${username}`;
+    resultBox.style.height = 'fit-content';
+    // resultBoxPassword.innerHTML = `<b>password</b>: ${password}`;
+    // resultBoxUsername.innerHTML = `<b>username</b>: ${username}`;
+
+    document.getElementById('password').value = password;
+    document.getElementById('username').value = username;
 }
 
 /**
