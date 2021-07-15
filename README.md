@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/images/logo.png" width="200"></a>
+<a href="https://github.com/wajeht/windows_form_unique_login/releases"><img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/images/logo.png" width="200"></a>
 </p>
 
 # <p align="center">Unique Login</p>
@@ -14,13 +14,53 @@ A simple over engineered full-stack web application that spits out unique login 
 
 # Motivation
 
+soon!
+
 # Screenshots
 
-<img src="https://raw.githubusercontent.com/wajeht/windows_form_unique_login/master/screen_shot.png" width="200">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/images/screen_shot.png" width="200">
 
 # Getting Started
 
 soon!
+
+## Prerequisites
+
+You must have Nodejs installed on your computer to have this project run locally. If you don't have it feel free to google on how to install it. It is pretty simple
+
+## Installation
+
+1. After you have install Nodejs, you can start workig on the project using the following instructions.
+2. Clone the repo
+
+    ```
+    git clone https://github.com/wajeht/unique-login-app.git
+    ```
+
+3. Install NPM packages
+
+    ```
+    npm install
+
+    ```
+
+4. Enter your make a new file inside /server and called it .env
+
+    ```
+    PORT=3000
+    ```
+
+5. Go go the server folder and type in the run command.
+
+    ```
+    npm run dev
+
+    ```
+
+6. Now you can visit the following url on your browser.
+    ```
+    http://localhost:3000/
+    ```
 
 # Contribute
 
@@ -34,5 +74,4 @@ Contributions are what make the open source community such an amazing place to b
 
 # License
 
-Distributed under the MIT License © [wajeht](https://www.github.com/wajeht/)
-. See LICENSE for more information.
+Distributed under the MIT License © [wajeht](https://www.github.com/wajeht/). See LICENSE for more information.
