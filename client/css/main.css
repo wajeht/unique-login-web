@@ -7,7 +7,8 @@
 }
 
 body {
-    background-color: #e8e8e8;
+    /* background-color: #e8e8e8; */
+    background-color: #ffffff;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -173,7 +174,7 @@ input:focus {
     background-color: #469eff;
 }
 
-/* -------------------- result -------------------- */
+/* -------------------- gennerate -------------------- */
 .result {
     width: 320px;
 
