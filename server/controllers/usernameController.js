@@ -6,7 +6,7 @@ exports.getUsernameByDefault = (req, res) => {
         animals: true,
     });
 
-    res.json({
+    res.status(200).json({
         username: username.getUsername(),
     });
 };
@@ -17,7 +17,7 @@ exports.getUsernameByOneParam = (req, res) => {
         [one]: true,
     });
 
-    res.json({
+    res.status(200).json({
         username: username.getUsername(),
     });
 };
@@ -29,7 +29,7 @@ exports.getUsernameByTwoParam = (req, res) => {
         [two]: true,
     });
 
-    res.json({
+    res.status(200).json({
         username: username.getUsername(),
     });
 };
@@ -42,7 +42,7 @@ exports.getUsernameByThreeParam = (req, res) => {
         [three]: true,
     });
 
-    res.json({
+    res.status(200).json({
         username: username.getUsername(),
     });
 };
@@ -56,7 +56,7 @@ exports.getUsernameByFourParam = (req, res) => {
         [four]: true,
     });
 
-    res.json({
+    res.status(200).json({
         username: username.getUsername(),
     });
 };

@@ -2,7 +2,8 @@ const Password = require('../models/Password.js');
 
 exports.getDefaultPassword = (req, res) => {
     const password = new Password();
-    res.json({
+
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
@@ -13,7 +14,7 @@ exports.getDefaultPasswordByLength = (req, res) => {
         length: length,
     });
 
-    res.json({
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
@@ -25,7 +26,7 @@ exports.getPasswordByLengthAndOneParam = (req, res) => {
         [one]: true,
     });
 
-    res.json({
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
@@ -38,7 +39,7 @@ exports.getPasswordByLengthAndTwoParams = (req, res) => {
         [two]: true,
     });
 
-    res.json({
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
@@ -52,7 +53,7 @@ exports.getPasswordByLengthAndThreeParams = (req, res) => {
         [three]: true,
     });
 
-    res.json({
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
@@ -67,7 +68,7 @@ exports.getPasswordByLengthAndFourParams = (req, res) => {
         [four]: true,
     });
 
-    res.json({
+    res.status(200).json({
         password: password.getPassword(),
     });
 };
