@@ -28,7 +28,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 
 # Getting Started
 
-soon!
+The following documentation will guide toward your local development. Read through it carefully and let me know if you have any question!
 
 ## Prerequisites
 
@@ -47,7 +47,6 @@ You must have Nodejs installed on your computer to have this project run locally
 
     ```
     npm install
-
     ```
 
 4. Enter your make a new file inside /server and called it .env
@@ -69,7 +68,59 @@ You must have Nodejs installed on your computer to have this project run locally
 
 # API end points
 
-soon!
+## Username
+Replace {param} with the following words. It does not have to be in order. Any placement will work.
+
+```
+adjectives, verbs, nouns, animals
+```
+
+### For example:
+
+`GET`  /api/username/nouns/adjectives
+
+```json
+{
+	"username":"Stinkbugrestaurant"
+}
+```
+
+
+| Verbs    | End-points |
+| --------- | ----------- |
+| `GET`     | /api/username |
+| `GET`     | /api/username/{param} |
+| `GET`     | /api/username/{param}/{param} |
+| `GET`     | /api/username/{param}/{param}/{param} | 
+| `GET`     | /api/username/{param}/{param}/{param}/{param} |
+
+## Password
+Replace {param} with the following words. It does not have to be in order. Any placement will work.
+
+```
+uppercase, lowercase, number, special
+```
+But {length} should always be a number.
+
+### For example:
+
+`GET`  /api/password/14/uppercase/special
+
+```json
+{
+	"password":"$I*OYS&!N!P*JJ"
+}
+```
+
+| Verbs    | End-points |
+| --------- | ----------- |
+| `GET`     | /api/password |
+| `GET`     | /api/password/{length |
+| `GET`     | /api/password/{length}/{param} |
+| `GET`     | /api/password/{length}/{param}/{param} |
+| `GET`     | /api/password/{length}/{param}/{param}/{param} |
+| `GET`     | /api/password/{length}/{param}/{param}/{param}/{param} |
+
 
 # Contribute
 
