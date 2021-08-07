@@ -115,7 +115,7 @@ But {length} should always be a number.
 | Verbs    | End-points |
 | --------- | ----------- |
 | `GET`     | /api/password |
-| `GET`     | /api/password/{length |
+| `GET`     | /api/password/{length} |
 | `GET`     | /api/password/{length}/{param} |
 | `GET`     | /api/password/{length}/{param}/{param} |
 | `GET`     | /api/password/{length}/{param}/{param}/{param} |

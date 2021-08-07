@@ -61,7 +61,7 @@ button {
     padding: 25px;
     background-color: white;
     border-radius: 5px;
-    height: calc(100vh - 28%);
+    /* height: calc(100vh - 28%); */
     width: 500px;
 
     display: flex;
