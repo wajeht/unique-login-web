@@ -1,7 +1,7 @@
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
-<img src="https://api.iconify.design/mdi:book-lock.svg" width="250" style="background:#01408D; border-radius: 10px;">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/android-chrome-512x512.png" width="250">
 
 </a>
 </p>

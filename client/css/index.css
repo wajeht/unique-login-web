@@ -19,7 +19,7 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  background: radial-gradient(transparent, black), #005fd2;
+  /* background: radial-gradient(transparent, black), #005fd2; */
 
   padding: 25px;
 
