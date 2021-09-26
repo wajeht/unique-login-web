@@ -1,11 +1,15 @@
 <p align="center">
-<a href="https://github.com/wajeht/windows_form_unique_login/releases"><img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/images/logo.png" width="200"></a>
+<a href="https://github.com/wajeht/windows_form_unique_login/releases">
+
+<img src="https://api.iconify.design/mdi:book-lock.svg" width="250" style="background:#01408D; border-radius: 10px;">
+
+</a>
 </p>
 
 # <p align="center">Unique Login</p>
 
 <p align="center">
-A simple over engineered full-stack web application that spits out unique login credentials 
+A simple over engineered full-stack web application that spits out unique login credentials
 </p>
 
 # Motivation
@@ -14,7 +18,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 
 # Screenshots
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/images/screen_shot.png" width="200">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/unique-login-app.jpg">
 
 # Technology
 
@@ -39,36 +43,37 @@ You must have Nodejs installed on your computer to have this project run locally
 1. After you have install Nodejs, you can start workig on the project using the following instructions.
 2. Clone the repo
 
-    ```
-    git clone https://github.com/wajeht/unique-login-app.git
-    ```
+   ```
+   git clone https://github.com/wajeht/unique-login-app.git
+   ```
 
 3. Install NPM packages
 
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 
 4. Enter your make a new file inside /server and called it .env
 
-    ```
-    PORT=3000
-    ```
+   ```
+   PORT=3000
+   ```
 
 5. Go go the server folder and type in the run command.
 
-    ```
-    npm run dev
-    ```
+   ```
+   npm run dev
+   ```
 
 6. Now you can visit the following url on your browser.
-    ```
-    http://localhost:3000/
-    ```
+   ```
+   http://localhost:3000/
+   ```
 
 # API end points
 
 ## Username
+
 Replace {param} with the following words. It does not have to be in order. Any placement will work.
 
 ```
@@ -77,50 +82,50 @@ adjectives, verbs, nouns, animals
 
 ### For example:
 
-`GET`  /api/username/nouns/adjectives
+`GET` /api/username/nouns/adjectives
 
 ```json
 {
-	"username":"Stinkbugrestaurant"
+  "username": "Stinkbugrestaurant"
 }
 ```
 
-
-| Verbs    | End-points |
-| --------- | ----------- |
-| `GET`     | /api/username |
-| `GET`     | /api/username/{param} |
-| `GET`     | /api/username/{param}/{param} |
-| `GET`     | /api/username/{param}/{param}/{param} | 
-| `GET`     | /api/username/{param}/{param}/{param}/{param} |
+| Verbs | End-points                                    |
+| ----- | --------------------------------------------- |
+| `GET` | /api/username                                 |
+| `GET` | /api/username/{param}                         |
+| `GET` | /api/username/{param}/{param}                 |
+| `GET` | /api/username/{param}/{param}/{param}         |
+| `GET` | /api/username/{param}/{param}/{param}/{param} |
 
 ## Password
+
 Replace {param} with the following words. It does not have to be in order. Any placement will work.
 
 ```
 uppercase, lowercase, number, special
 ```
+
 But {length} should always be a number.
 
 ### For example:
 
-`GET`  /api/password/14/uppercase/special
+`GET` /api/password/14/uppercase/special
 
 ```json
 {
-	"password":"$I*OYS&!N!P*JJ"
+  "password": "$I*OYS&!N!P*JJ"
 }
 ```
 
-| Verbs    | End-points |
-| --------- | ----------- |
-| `GET`     | /api/password |
-| `GET`     | /api/password/{length} |
-| `GET`     | /api/password/{length}/{param} |
-| `GET`     | /api/password/{length}/{param}/{param} |
-| `GET`     | /api/password/{length}/{param}/{param}/{param} |
-| `GET`     | /api/password/{length}/{param}/{param}/{param}/{param} |
-
+| Verbs | End-points                                             |
+| ----- | ------------------------------------------------------ |
+| `GET` | /api/password                                          |
+| `GET` | /api/password/{length}                                 |
+| `GET` | /api/password/{length}/{param}                         |
+| `GET` | /api/password/{length}/{param}/{param}                 |
+| `GET` | /api/password/{length}/{param}/{param}/{param}         |
+| `GET` | /api/password/{length}/{param}/{param}/{param}/{param} |
 
 # Contribute
 
