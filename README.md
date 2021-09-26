@@ -11,6 +11,7 @@
 <p align="center">
 A simple over engineered full-stack web application that spits out unique login credentials
 </p>
+<br>
 
 # Motivation
 
@@ -18,7 +19,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 
 # Screenshots
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/unique-login-app.jpg">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/screenshot.png" width="250">
 
 # Technology
 
