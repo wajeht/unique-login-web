@@ -1,177 +1,79 @@
-// global variable
-const resultBox = document.getElementsByClassName('result')[0];
-const resultBoxPassword = document.getElementsByClassName('result__password')[0];
-const resultBoxUsername = document.getElementsByClassName('result__username')[0];
-const generateButton = document.getElementById('generate');
-const uppercase = document.getElementById('uppercase');
-const lowercase = document.getElementById('lowercase');
-const number = document.getElementById('number');
-const special = document.getElementById('special');
-const passwordLength = document.getElementById('passwordLength');
-const password = document.getElementById('password');
-const username = document.getElementById('username');
-
-// to store password and username options
-let usernameOption = [];
-let passwordOption = [];
-let passwordlengthOption = [];
-
-/**
- * This function will copy password into clipboard
- */
-function copyPassword() {
-    password.select();
-    password.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-}
-
-/**
- * This function will copy username into clipboard
- */
-function copyUsername() {
-    username.select();
-    username.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-}
-
-/**
- * This function will hides the result-box when dom load
- */
-function hideResultBoxOnDomLoad() {
-    window.addEventListener('DOMContentLoaded', (event) => {
-        resultBox.style.height = '106px';
-        resultBox.style.visibility = 'hidden';
-        // resultBox.innerHTML = '‏‎ ';
-    });
-}
-
-/**
- * This function will spit out generated text into result box
- * @param {String} input, username
- */
-function showResultBox(password, username) {
-    resultBox.style.visibility = 'visible';
-    resultBox.style.height = 'fit-content';
-    // resultBoxPassword.innerHTML = `<b>password</b>: ${password}`;
-    // resultBoxUsername.innerHTML = `<b>username</b>: ${username}`;
-
-    document.getElementById('password').value = password;
-    document.getElementById('username').value = username;
-}
-
-/**
- * This function will spit out generated err text into result box
- * @param {String} input
- */
-function showErrBox(input) {
-    resultBox.style.background = '#ECB0B0';
-    resultBox.style.color = '#ffffff';
-    resultBox.innerHTML = input;
-}
-
-/**
- * This function will get value when user have checked the password
- * options and push it into an array above
- * @param {Object} option
- */
-function getPasswordCheckboxValue(option) {
-    if (option.checked == true) {
-        passwordOption.push(option.value);
-    } else {
-        const pass = passwordOption.filter((pass) => pass != option.value);
-        passwordOption = pass;
-    }
-}
-
-/**
- * This function will get value when user have checked
- * the username options and push it into an array above
- * @param {Object} option
- */
-function getUsernameCheckboxValue(option) {
-    if (option.checked == true) {
-        usernameOption.push(option.value);
-    } else {
-        const pass = usernameOption.filter((pass) => pass != option.value);
-        usernameOption = pass;
-    }
-}
-
-/**
- * This function returns the lenght of an password
- * @returns {Number}
- */
-function getPasswordLengthValue() {
-    const length = Number.parseInt(passwordLength.value); // convert
-    passwordlengthOption.push(length);
-    passwordlengthOption = passwordlengthOption.slice(passwordlengthOption.length - 1);
-    return passwordlengthOption[passwordlengthOption.length - 1];
-}
-
-/**
- * This function will returns user input options into api url
- * @returns {String} Example: http://localhost:3000/20/uppercase
- */
-function getUserInputIntoAPIURL() {
-    const length = parseInt(getPasswordLengthValue()) || 14;
-    const passwordParams = passwordOption.join('/');
-    const usernameParams = usernameOption.join('/');
-
-    // for production
+Vue.createApp({
+  data() {
     return {
-        passwordAPI: `${window.location.href}api/password/${length}/${passwordParams}`,
-        usernameAPI: `${window.location.href}api/username/${usernameParams}`,
+      checkedPassword: [],
+      checkedUsername: [],
+      enteredLength: 14,
+      result: {
+        username: "",
+        password: "",
+      },
+      isError: false,
+      errorMessage: "",
     };
+  },
+  computed: {
+    showResult() {
+      return this.isError ? "app__error" : "app__result";
+    },
+  },
+  methods: {
+    /**
+     * This function will return a list of generated urls from user
+     * selected options.
+     * @returns {Array} list of generated urls
+     */
+    generateUrls() {
+      try {
+        // password
+        const passwordParams = this.checkedPassword.join("/");
+        const passwordLength = this.enteredLength;
+        const passwordAPI = `https://uniquelogin.app/api/password/${passwordLength}/${passwordParams}`;
 
-    // for local development
-    // return {
-    //     passwordAPI: `http://localhost:6968/api/password/${length}/${passwordParams}`,
-    //     usernameAPI: `http://localhost:6968/api/username/${usernameParams}`,
-    // };
-}
+        // username
+        const usernameParams = this.checkedUsername.join("/");
+        const usernameAPI = `https://uniquelogin.app/api/username/${usernameParams}`;
 
-/**
- * This function will fetch data and returning password and username
- * @returns {Object}
- */
-async function fetchData() {
-    try {
-        const { passwordAPI, usernameAPI } = getUserInputIntoAPIURL();
+        return [passwordAPI, usernameAPI];
+      } catch (error) {
+        this.isError = true;
+        this.errorMessage = error;
+      }
+    },
+    /**
+     * This function will fetch api from given urls as input
+     * @param {Array} urls
+     * @returns {Promise}
+     */
+    async fetchALL(urls) {
+      try {
+        const data = await Promise.all(
+          urls.map((url) => fetch(url).then((responses) => responses.json()))
+        );
+        return data;
+      } catch (error) {
+        this.isError = true;
+        this.errorMessage = error;
+      }
+    },
+    /**
+     * Generate unique login and display it in result box
+     */
+    async generateUniqueLogin() {
+      try {
+        this.isResult = true;
 
-        let [password, username] = await Promise.all([
-            fetch(passwordAPI).then((res) => res.json()),
-            fetch(usernameAPI).then((res) => res.json()),
-        ]);
+        this.isLoading = true;
+        const urls = this.generateUrls();
+        const responses = await this.fetchALL(urls);
+        const data = await responses;
 
-        return {
-            password: password.password,
-            username: username.username,
-        };
-    } catch (err) {
-        showErrBox(err.message);
-    }
-}
-
-/**
- * This function will request api generated by user into an actually api
- * and spit ot the text into text
- */
-function generate() {
-    // btn 'generate' click
-    generateButton.addEventListener('click', () => {
-        fetchData()
-            .then((res) => {
-                const { password, username } = res;
-                showResultBox(password, username);
-            })
-            .catch((err) => {
-                showErrBox(err.message);
-            });
-    });
-}
-
-// -------------------- main -------------------
-(function main() {
-    hideResultBoxOnDomLoad();
-    generate();
-})();
+        this.result.password = data[0].password;
+        this.result.username = data[1].username;
+      } catch (error) {
+        this.isError = true;
+        this.errorMessage = error;
+      }
+    },
+  },
+}).mount(".app");

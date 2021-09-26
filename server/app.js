@@ -8,7 +8,7 @@ const helmet = require('helmet');
 const passwordRoutes = require('./routes/passwordRouter.js');
 const usernameRoutes = require('./routes/usernameRouter.js');
 
-app.use(helmet())
+app.use(helmet());
 app.use(cors());
 app.use(compression());
 

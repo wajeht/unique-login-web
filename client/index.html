@@ -1,132 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>unique-login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0'>
-	<title>UniqueLogin</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/main.css">
+    <!-- ---------- linkedin stuff starts ---------- -->
+    <meta name="title" property="og:title" content="UniqueLogin" />
+    <meta property="og:type" content="Full-stack Web App" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://uniquelogin.app/img/linkedin.jpg"
+    />
+    <meta
+      name="description"
+      content="A simple over-engineered full-stack web application that spits out unique login credentials"
+    />
+    <meta name="author" content="wajeht" />
+    <!-- ---------- linkedin stuff end ---------- -->
+  </head>
+  <body>
+    <div class="app animate__animated animate__zoomInDown">
+      <!-- -------------------- logo -------------------- -->
+      <div class="app__logo">
+        <span
+          class="iconify"
+          data-icon="mdi:book-lock"
+          data-inline="false"
+        ></span>
+      </div>
 
-	<!-- ---------- linkedin stuff starts ---------- -->
-	<meta name="title" property="og:title" content="UniqueLogin">
-	<meta property="og:type" content="Full-stack Web App">
-	<meta name="image" property="og:image" content="https://uniquelogin.app/images/linkedin.jpg" />
-	<meta name="description"
-		  content="A simple over-engineered full-stack web application that spits out unique login credentials" />
-	<meta name="author" content="wajeht">
-	<!-- ---------- linkedin stuff end ---------- -->
+      <!-- -------------------- description -------------------- -->
+      <div class="app__description">
+        <div class="splitter">
+          <h2>UniqueLogin</h2>
+          <a href="https://github.com/wajeht/unique-login-app" target="_blank">
+            <span
+              class="iconify github"
+              data-icon="mdi:github"
+              data-inline="false"
+            ></span>
+          </a>
+        </div>
+        <div>
+          A simple over-engineered full-stack web application that spits out
+          unique login credentials
+        </div>
+      </div>
 
-</head>
+      <!-- -------------------- options -------------------- -->
+      <div class="app__options">
+        <div class="app__options-col">
+          <!-- -------------------- password -------------------- -->
+          <div class="app__options-password">
+            <h3>Password</h3>
+            <div>
+              <input
+                type="checkbox"
+                name="uppercase"
+                id="uppercase"
+                class="checkbox"
+                v-model="checkedPassword"
+                value="uppercase"
+              />
+              <label for="uppercase">Uppercase (A-Z)</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="lowercase"
+                id="lowercase"
+                class="checkbox"
+                v-model="checkedPassword"
+                value="lowercase"
+              />
+              <label for="lowercase">Lowercase (a-z)</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="number"
+                id="number"
+                class="checkbox"
+                v-model="checkedPassword"
+                value="number"
+              />
+              <label for="number">Number (0-9)</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="special"
+                id="special"
+                class="checkbox"
+                v-model="checkedPassword"
+                value="special"
+              />
+              <label for="special">Special (!@#$%^&*-.)</label>
+            </div>
+          </div>
 
-<body>
-	<div class="container">
-		<div class="card">
+          <!-- -------------------- username -------------------- -->
+          <div class="app__options-username">
+            <h3>Username</h3>
+            <div>
+              <input
+                type="checkbox"
+                name="animals"
+                id="animals"
+                class="checkbox"
+                v-model="checkedUsername"
+                value="animals"
+              />
+              <label for="animals">Animal</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="verbs"
+                id="verbs"
+                class="checkbox"
+                v-model="checkedUsername"
+                value="verbs"
+              />
+              <label for="verbs">Verb</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="nouns"
+                id="nouns"
+                class="checkbox"
+                v-model="checkedUsername"
+                value="nouns"
+              />
+              <label for="nouns">Noun</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="adjectives"
+                id="adjectives"
+                class="checkbox"
+                v-model="checkedUsername"
+                value="adjectives"
+              />
+              <label for="adjectives">Adjective</label>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<!-- ---------- logo ---------- -->
-			<div class="logo">
-				<a href="https://github.com/wajeht/unique-login-app" target="_blank"
-				   rel="noopener noreferrer" title="view on github">
-					<img src="images/logo.png" alt="uniquelogin logo">
-				</a>
-			</div>
-
-			<!-- ---------- title ---------- -->
-			<div class="title">
-				<h2>UniqueLogin</h2>
-				<a href="https://github.com/wajeht/unique-login-app" target="_blank"
-				   rel="noopener noreferrer" title="view on github">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-						 viewBox="0 0 24 24">
-						<path
-							  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-					</svg>
-				</a>
-			</div>
-
-			<!-- ---------- description ---------- -->
-			<div class="description">
-				<p>A simple over-engineered full-stack web application that spits out unique login credentials</p>
-			</div>
-
-			<!-- ---------- option ---------- -->
-			<div class="options">
-				<div class="password">
-					<h2>Password</h2>
-					<div class="password-checkedbox">
-						<input type="checkbox" id="uppercase" name="uppercase" value="uppercase"
-							   onclick="getPasswordCheckboxValue(this)">
-						<label for="vehicle1">Uppercase (A-Z)</label><br>
-						<input type="checkbox" id="lowercase" name="lowercase" value="lowercase"
-							   onclick="getPasswordCheckboxValue(this)">
-						<label for="vehicle2">Lowercase (a-z)</label><br>
-						<input type="checkbox" id="number" name="number" value="number"
-							   onclick="getPasswordCheckboxValue(this)">
-						<label for="vehicle3">Number (0-9)</label><br>
-						<input type="checkbox" id="special" name="special" value="special"
-							   onclick="getPasswordCheckboxValue(this)">
-						<label for="vehicle3">Special (!@#$%^&*-.)</label><br><br>
-					</div>
-				</div>
-				<div class="username">
-					<h2>Username</h2>
-					<div class="username-checkedbox">
-						<input type="checkbox" id="animals" name="animals" value="animals"
-							   onclick="getUsernameCheckboxValue(this)">
-						<label for="vehicle1">Animal</label><br>
-						<input type="checkbox" id="verbs" name="verbs" value="verbs"
-							   onclick="getUsernameCheckboxValue(this)">
-						<label for="vehicle2">Verb</label><br>
-						<input type="checkbox" id="nouns" name="nouns" value="nouns"
-							   onclick="getUsernameCheckboxValue(this)">
-						<label for="vehicle3">Noun</label><br>
-						<input type="checkbox" id="adjectives" name="adjectives" value="adjectives"
-							   onclick="getUsernameCheckboxValue(this)">
-						<label for="vehicle3">Adjective</label><br><br>
-					</div>
-				</div>
-			</div>
-
-			<!-- ---------- password length ---------- -->
-			<div class="password-input">
-				<h2>Length</h2>
-				<input type="number" name="passwordLength" id="passwordLength" placeholder="14">
-			</div>
-
-			<!-- ---------- generate ---------- -->
-			<div class="generate">
-				<button id="generate">Generate</button>
-			</div>
-
-			<!-- ---------- result ---------- -->
-			<div class="result">
-				<p class="result__brace">{
-				<div class="result__input">
-					<div class="result__username-flex">
-						<label for="username">username: </label>
-						<input type="text" id="password" class="result__password">
-						<button class="copy" onclick="copyPassword()">Copy</button>
-					</div>
-					<div class="result__password-flex">
-						<label for="username">password: </label>
-						<input type="text" id="username" class="result__username">
-						<button class="copy" onclick="copyUsername()">Copy</button>
-					</div>
-				</div>
-				}
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<script src="./js/index.js"></script>
-	<!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
-</body>
-
+      <!-- -------------------- length -------------------- -->
+      <div class="app__options-length">
+        <h3>Length</h3>
+        <div class="splitter">
+          <input type="number" placeholder="14" v-model="enteredLength" />
+          <!-- -------------------- generate button -------------------- -->
+          <button type="submit" v-on:click="generateUniqueLogin">
+            <span
+              class="iconify"
+              data-icon="octicon:gear"
+              data-inline="false"
+            ></span>
+          </button>
+        </div>
+      </div>
+      <!-- -------------------- result -------------------- -->
+      <div v-bind:class="showResult">
+        <div v-if="isError">
+          <p>{{errorMessage}}</p>
+        </div>
+        <div
+          v-else-if="!isError && (result.username !== '' && result.password !== '')"
+        >
+          <p>
+            <span style="font-weight: bold">Username:</span> {{result.username}}
+          </p>
+          <p>
+            <span style="font-weight: bold">Password:</span> {{result.password}}
+          </p>
+        </div>
+        <div v-else>
+          <p>Choose prefer option and click generate!</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/js/index.js"></script>
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+  </body>
 </html>
