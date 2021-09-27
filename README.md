@@ -1,7 +1,7 @@
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/android-chrome-512x512.png" width="250">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/android-chrome-512x512.png" width="200">
 
 </a>
 </p>
@@ -29,7 +29,8 @@ I was inspired by the window's version that I've developed last year; I wanted t
 <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" />‏‎ ‎‏‎
 <img src="https://img.shields.io/badge/Materialed--CSS-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" />‏‎ ‎
 <img src="https://img.shields.io/badge/restful-api-0081CB?style=for-the-badge&logo=restful-api-ui&logoColor=white" />‏‎ ‎
-<img src="https://img.shields.io/badge/nginx-239120?&style=for-the-badge&logo=nginx&logoColor=white" />‏‎ ‎‏‎
+<img src="https://img.shields.io/badge/nginx-239120?&style=for-the-badge&logo=nginx&logoColor=white" />‏‎ ‎
+<img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />‏‎ ‎‏‎
 
 # Getting Started
 
