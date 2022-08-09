@@ -1,7 +1,7 @@
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/android-chrome-512x512.png" width="200">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/src/web/public/img/android-chrome-512x512.png" width="200">
 
 </a>
 </p>
@@ -19,7 +19,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 
 # Screenshots
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-app/main/client/img/screenshot.png" width="250">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/src/web/public/img/screenshot.png" width="250">
 
 # Technology
 
