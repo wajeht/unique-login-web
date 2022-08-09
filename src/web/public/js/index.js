@@ -24,37 +24,16 @@ Vue.createApp({
      * @returns {Array} list of generated urls
      */
     generateUrls() {
-      try {
-        // password
-        const passwordParams = this.checkedPassword.join('/');
-        const passwordLength = this.enteredLength;
-        const passwordAPI = `/api/password/${passwordLength}/${passwordParams}`;
+      // password
+      const passwordParams = this.checkedPassword.join('/');
+      const passwordLength = this.enteredLength;
+      const passwordAPI = `/api/password/${passwordLength}/${passwordParams}`;
 
-        // username
-        const usernameParams = this.checkedUsername.join('/');
-        const usernameAPI = `/api/username/${usernameParams}`;
+      // username
+      const usernameParams = this.checkedUsername.join('/');
+      const usernameAPI = `/api/username/${usernameParams}`;
 
-        return [passwordAPI, usernameAPI];
-      } catch (error) {
-        this.isError = true;
-        this.errorMessage = error;
-      }
-    },
-    /**
-     * This function will fetch api from given urls as input
-     * @param {Array} urls
-     * @returns {Promise}
-     */
-    async fetchALL(urls) {
-      try {
-        const data = await Promise.all(
-          urls.map((url) => fetch(url).then((responses) => responses.json())),
-        );
-        return data;
-      } catch (error) {
-        this.isError = true;
-        this.errorMessage = error;
-      }
+      return [passwordAPI, usernameAPI];
     },
     /**
      * Generate unique login and display it in result box
@@ -65,8 +44,17 @@ Vue.createApp({
 
         this.isLoading = true;
         const urls = this.generateUrls();
-        const responses = await this.fetchALL(urls);
-        const data = await responses;
+        const data = await Promise.all(
+          urls.map((url) =>
+            fetch(url).then((res) => {
+              if (res.status === 429) {
+                throw new Error(res.statusText);
+              } else {
+                return res.json();
+              }
+            }),
+          ),
+        );
 
         this.result.password = data[0].password;
         this.result.username = data[1].username;
