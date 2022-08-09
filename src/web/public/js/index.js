@@ -48,7 +48,7 @@ Vue.createApp({
           urls.map((url) =>
             fetch(url).then((res) => {
               if (res.status === 429) {
-                throw new Error(res.statusText);
+                throw new Error('Too many requests, please try again later!');
               } else {
                 return res.json();
               }
@@ -60,7 +60,7 @@ Vue.createApp({
         this.result.username = data[1].username;
       } catch (error) {
         this.isError = true;
-        this.errorMessage = error;
+        this.errorMessage = error.message;
       }
     },
   },
