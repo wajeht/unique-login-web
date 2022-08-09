@@ -1,3 +1,5 @@
+
+
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
@@ -11,17 +13,21 @@
 <p align="center">
 A simple over engineered full-stack web application that spits out unique login credentials
 </p>
-<br>
 
-# Motivation
+# ⚠️ Depreciated
+This codebase is no longer actively maintained. The package will continue working, but support and changes are no longer provided.
+
+
+# 💪 Motivation
 
 I was inspired by the window's version that I've developed last year; I wanted to abe to use it anywhere I go. Its font-end is running as NGINX as static file and Nodejs as an API end point.
 
-# Screenshots
+# 📺 Screenshots
 
 <img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/src/web/public/img/screenshot.png" width="250">
 
-# Technology
+
+# 📚 Technology
 
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />‏‎ ‎‏‎
 <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" /> ‎‏‎‏‎
@@ -32,7 +38,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 <img src="https://img.shields.io/badge/nginx-239120?&style=for-the-badge&logo=nginx&logoColor=white" />‏‎ ‎
 <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />‏‎ ‎‏‎
 
-# Getting Started
+# 🧑‍💻 Getting Started
 
 The following documentation will guide toward your local development. Read through it carefully and let me know if you have any question!
 
@@ -72,7 +78,10 @@ You must have Nodejs installed on your computer to have this project run locally
    http://localhost:3000/
    ```
 
-# API end points
+# 📃 API end points
+We have two resources available for api call.
+- username
+- password
 
 ## Username
 
@@ -129,7 +138,7 @@ But {length} should always be a number.
 | `GET` | /api/password/{length}/{param}/{param}/{param}         |
 | `GET` | /api/password/{length}/{param}/{param}/{param}/{param} |
 
-# Contribute
+# 👥 Contribute
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
@@ -139,6 +148,6 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
-# License
+# © License
 
 Distributed under the MIT License © [wajeht](https://www.github.com/wajeht/). See LICENSE for more information.
