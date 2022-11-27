@@ -1,4 +1,5 @@
 import Username from './username.model.js';
+import { StatusCodes } from 'http-status-codes';
 
 /**
  * It creates a new instance of the Username class, and then returns a JSON object with the username
@@ -11,7 +12,7 @@ export function getUsernameByDefault(req, res) {
     animals: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     username: username.getUsername(),
   });
 }
@@ -27,7 +28,7 @@ export function getUsernameByOneParam(req, res) {
     [one]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     username: username.getUsername(),
   });
 }
@@ -44,7 +45,7 @@ export function getUsernameByTwoParam(req, res) {
     [two]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     username: username.getUsername(),
   });
 }
@@ -62,7 +63,7 @@ export function getUsernameByThreeParam(req, res) {
     [three]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     username: username.getUsername(),
   });
 }
@@ -81,7 +82,7 @@ export function getUsernameByFourParam(req, res) {
     [four]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     username: username.getUsername(),
   });
 }

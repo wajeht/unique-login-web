@@ -1,4 +1,5 @@
 import Password from './password.model.js';
+import { StatusCodes } from 'http-status-codes';
 
 /**
  * It creates a new Password object, and then returns the default password
@@ -8,7 +9,7 @@ import Password from './password.model.js';
 export function getDefaultPassword(req, res) {
   const password = new Password();
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
@@ -25,7 +26,7 @@ export function getDefaultPasswordByLength(req, res) {
     length: length,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
@@ -42,7 +43,7 @@ export function getPasswordByLengthAndOneParam(req, res) {
     [one]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
@@ -60,7 +61,7 @@ export function getPasswordByLengthAndTwoParams(req, res) {
     [two]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
@@ -79,7 +80,7 @@ export function getPasswordByLengthAndThreeParams(req, res) {
     [three]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
@@ -99,7 +100,7 @@ export function getPasswordByLengthAndFourParams(req, res) {
     [four]: true,
   });
 
-  return res.status(200).json({
+  return res.status(StatusCodes.OK).json({
     password: password.getPassword(),
   });
 }
