@@ -27,12 +27,16 @@ describe('GET /api/password', () => {
 
   it('should returns a default password that has some number characters', async () => {
     const res = await request(app).get('/api/password');
-    expect(res.body.password.split('').some((c) => '1234567890'.split('').indexOf(c))).toBe(true);
+    expect(res.body.password.split('').some((c) => '1234567890'.split('').indexOf(c) != -1)).toBe(
+      true,
+    );
   });
 
   it('should returns a default password that has some special characters', async () => {
     const res = await request(app).get('/api/password');
-    expect(res.body.password.split('').some((c) => '!@#$%^&*-.'.split('').indexOf(c))).toBe(true);
+    expect(res.body.password.split('').some((c) => '!@#$%^&*-.'.split('').indexOf(c) != -1)).toBe(
+      true,
+    );
   });
 });
 
