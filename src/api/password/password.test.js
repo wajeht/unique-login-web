@@ -34,9 +34,7 @@ describe('GET /api/password', () => {
 
   it('should returns a default password that has some special characters', async () => {
     const res = await request(app).get('/api/password');
-    expect(
-      res.body.password.split('').some((c) => '!@#$%^&*-.'.split('').includes(c) === true),
-    ).toBe(true);
+    expect(res.body.password.split('').some((c) => '!@#$%^&*-.'.split('').includes(c))).toBe(true);
   });
 });
 
@@ -94,7 +92,7 @@ describe('GET /api/password/8/number/uppercase', () => {
   it('should returns a password that has some number characters and uppercase', async () => {
     const res = await request(app).get('/api/password/8/number/uppercase');
     expect(res.body.password.length).toBe(8);
-    expect(res.body.password.split('').some((c) => '1234567890'.split('').includes(c))).toBe(true);
+    expect(res.body.password.split('').some((c) => '1234567890'.includes(c))).toBe(true);
     expect(res.body.password.split('').some((c) => c.toUpperCase())).toBe(true);
   });
 });
@@ -103,7 +101,7 @@ describe('GET /api/password/10/number/uppercase/lowercase', () => {
   it('should returns a password that has some number, uppercase, and lowercase', async () => {
     const res = await request(app).get('/api/password/10/number/uppercase/lowercase');
     expect(res.body.password.length).toBe(10);
-    expect(res.body.password.split('').some((c) => '1234567890'.split('').includes(c))).toBe(true);
+    expect(res.body.password.split('').some((c) => '1234567890'.includes(c))).toBe(true);
     expect(res.body.password.split('').some((c) => c.toUpperCase())).toBe(true);
     expect(res.body.password.split('').some((c) => !c.toUpperCase())).toBe(false);
   });
@@ -116,8 +114,6 @@ describe('GET /api/password/10/number/uppercase/lowercase/special', () => {
     expect(res.body.password.split('').some((c) => '1234567890'.split('').includes(c))).toBe(true);
     expect(res.body.password.split('').some((c) => c.toUpperCase())).toBe(true);
     expect(res.body.password.split('').some((c) => !c.toUpperCase())).toBe(false);
-    expect(
-      res.body.password.split('').some((c) => '!@#$%^&*-.'.split('').includes(c) == true),
-    ).toBe(true);
+    expect(res.body.password.split('').some((c) => '!@#$%^&*-.'.includes(c))).toBe(true);
   });
 });
