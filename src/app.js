@@ -14,8 +14,8 @@ import { getHomePage, errorHandler, notFoundHandler } from './app.controller.js'
 app.use(cors());
 app.use(compression());
 app.use(json());
-app.use(helmet({ contentSecurityPolicy: false })); // prettier-ignore
-app.use(express.static(path.join(process.cwd(), 'src', 'web', 'public')));
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.use(rateLimit);
 

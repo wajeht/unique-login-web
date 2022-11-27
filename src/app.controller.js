@@ -9,7 +9,7 @@ import path from 'path';
  */
 export function getHomePage(req, res, next) {
   try {
-    return res.sendFile(path.join(process.cwd(), 'src', 'web', 'views', 'index.html'));
+    return res.sendFile(path.join(process.cwd(), 'src', 'views', 'index.html'));
   } catch (e) {
     next(e.message);
   }
@@ -23,7 +23,7 @@ export function getHomePage(req, res, next) {
  * @returns The not-found.html file
  */
 export function notFoundHandler(req, res, next) {
-  return res.sendFile(path.join(process.cwd(), 'src', 'web', 'views', 'not-found.html'));
+  return res.sendFile(path.join(process.cwd(), 'src', 'views', 'not-found.html'));
 }
 
 /**
@@ -35,5 +35,5 @@ export function notFoundHandler(req, res, next) {
  * @returns The error.html file is being returned.
  */
 export function errorHandler(req, res, next) {
-  return res.sendFile(path.join(process.cwd(), 'src', 'web', 'views', 'error.html'));
+  return res.sendFile(path.join(process.cwd(), 'src', 'views', 'error.html'));
 }

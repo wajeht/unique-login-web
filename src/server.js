@@ -1,5 +1,5 @@
-import constants from '../config/constants.js';
-import app from '../app.js';
+import constants from './config/constants.js';
+import app from './app.js';
 
 const { PORT } = constants;
 
