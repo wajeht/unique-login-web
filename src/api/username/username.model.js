@@ -2,10 +2,8 @@ import * as data from '../../data/index.js';
 
 export default class Username {
   /**
-   * The constructor function takes in a config object and sets the class properties to the values of the
-   * config object
-   * @param [config] - This is the configuration object that you pass in when you create a new instance
-   * of the class.
+   * The constructor function takes in a config object and sets the class properties to the values of the config object
+   * @param [config] - This is the configuration object that you pass in when you create a new instance of the class.
    */
   constructor(
     config = {
@@ -15,14 +13,14 @@ export default class Username {
       animals: true,
     },
   ) {
-    if (config.adjectives) this.adjectives = data.animals;
+    if (config.adjectives) this.adjectives = data.adjectives;
     if (config.verbs) this.verbs = data.verbs;
     if (config.nouns) this.nouns = data.nouns;
     if (config.animals) this.animals = data.animals;
   }
 
   /**
-   * > It returns a random element from each of the arrays in the object, if they exist
+   * It returns a random element from each of the arrays in the object, if they exist
    * @returns A random username is being returned.
    */
   getUsername() {
