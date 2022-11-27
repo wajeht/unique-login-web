@@ -10,6 +10,8 @@ export function getDefaultPassword(req, res) {
   const password = new Password();
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }
@@ -27,6 +29,8 @@ export function getDefaultPasswordByLength(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }
@@ -44,6 +48,8 @@ export function getPasswordByLengthAndOneParam(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }
@@ -62,6 +68,8 @@ export function getPasswordByLengthAndTwoParams(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }
@@ -81,6 +89,8 @@ export function getPasswordByLengthAndThreeParams(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }
@@ -101,6 +111,8 @@ export function getPasswordByLengthAndFourParams(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     password: password.getPassword(),
   });
 }

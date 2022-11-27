@@ -13,6 +13,8 @@ export function getUsernameByDefault(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     username: username.getUsername(),
   });
 }
@@ -29,6 +31,8 @@ export function getUsernameByOneParam(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     username: username.getUsername(),
   });
 }
@@ -46,6 +50,8 @@ export function getUsernameByTwoParam(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     username: username.getUsername(),
   });
 }
@@ -64,6 +70,8 @@ export function getUsernameByThreeParam(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     username: username.getUsername(),
   });
 }
@@ -83,6 +91,8 @@ export function getUsernameByFourParam(req, res) {
   });
 
   return res.status(StatusCodes.OK).json({
+    success: true,
+    request_url: req.originalUrl,
     username: username.getUsername(),
   });
 }
