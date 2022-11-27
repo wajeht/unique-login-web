@@ -55,3 +55,31 @@ describe('GET /api/username/animals/adjectives/verbs/nouns', () => {
     expect(Nouns.includes(noun)).toBeTruthy();
   });
 });
+
+describe('GET /api/username/nouns', () => {
+  it('should returns a username with just noun', async () => {
+    const res = await request(app).get('/api/username/nouns');
+    expect(Nouns.includes(res.body.username)).toBeTruthy();
+  });
+});
+
+describe('GET /api/username/adjectives', () => {
+  it('should returns a username with just adjectives', async () => {
+    const res = await request(app).get('/api/username/adjectives');
+    expect(Adjectives.includes(res.body.username)).toBeTruthy();
+  });
+});
+
+describe('GET /api/username/animals', () => {
+  it('should returns a username with just animals', async () => {
+    const res = await request(app).get('/api/username/animals');
+    expect(Animals.includes(res.body.username)).toBeTruthy();
+  });
+});
+
+describe('GET /api/username/verbs', () => {
+  it('should returns a username with just verbs', async () => {
+    const res = await request(app).get('/api/username/verbs');
+    expect(Verbs.includes(res.body.username)).toBeTruthy();
+  });
+});
