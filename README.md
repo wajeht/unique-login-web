@@ -24,11 +24,12 @@ I was inspired by the window's version that I've developed last year; I wanted t
 
 # 📺 Screenshots
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/src/web/public/img/screenshot.png" width="250">
+<img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/public/img/screenshot.png" width="250">
 
 
 # 📚 Technology
 
+<div align="center">
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />‏‎ ‎‏‎
 <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" /> ‎‏‎‏‎
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> ‎‏‎
@@ -37,6 +38,7 @@ I was inspired by the window's version that I've developed last year; I wanted t
 <img src="https://img.shields.io/badge/restful-api-0081CB?style=for-the-badge&logo=restful-api-ui&logoColor=white" />‏‎ ‎
 <img src="https://img.shields.io/badge/nginx-239120?&style=for-the-badge&logo=nginx&logoColor=white" />‏‎ ‎
 <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />‏‎ ‎‏‎
+</div>
 
 # 🧑‍💻 Getting Started
 
