@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
-<img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/src/web/public/img/android-chrome-512x512.png" width="200">
+<img src="https://github.com/wajeht/unique-login-web/blob/main/public/img/android-chrome-512x512.png" width="200">
 
 </a>
 </p>
