@@ -1,25 +1,37 @@
 import path from 'path';
 
-import express, { json } from 'express';
-const app = express();
+import expressLayouts from 'express-ejs-layouts';
+import ejs from 'ejs';
+import express from 'express';
 
 import compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
 
 import rateLimit from './config/rateLimit.js';
-import ApiRoutes from './api/api.routes.js';
-import { getHomePage, errorHandler, notFoundHandler } from './app.controller.js';
+import apiRoutes from './api/api.routes.js';
+import { errorHandler, notFoundHandler } from './app.middlewares.js';
+import { getHomePage } from './views/views.routes.js';
+
+const app = express();
 
 app.use(cors());
 app.use(compression());
-app.use(json());
+app.use(express.json());
 app.use(helmet({ contentSecurityPolicy: false }));
+
 app.use(express.static(path.join(process.cwd(), 'public')));
+
+app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');
+app.set('views', path.resolve(path.join(process.cwd(), 'src', 'views', 'pages')));
+app.set('layout', '../layouts/main.html');
+
+app.use(expressLayouts);
 
 app.use(rateLimit);
 
-app.use('/api', ApiRoutes);
+app.use('/api', apiRoutes);
 app.get('/', getHomePage);
 
 app.use(notFoundHandler);

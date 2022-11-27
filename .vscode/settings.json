@@ -1,9 +1,10 @@
 {
 	"liveServer.settings.port": 5500,
 	"cSpell.words": [
-		"asynciterable",
-		"nocheck",
-		"nodenext",
-		"wajeht"
-	]
+        "asynciterable",
+        "middlewares",
+        "nocheck",
+        "nodenext",
+        "wajeht"
+    ]
 }

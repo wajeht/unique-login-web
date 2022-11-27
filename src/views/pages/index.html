@@ -1,0 +1,147 @@
+<div class="app animate__animated animate__fast animate__zoomInDown">
+  <!-- -------------------- logo -------------------- -->
+  <div class="app__logo">
+    <span class="iconify" data-icon="mdi:book-lock" data-inline="false"></span>
+  </div>
+
+  <!-- -------------------- description -------------------- -->
+  <div class="app__description">
+    <div class="splitter">
+      <h2>UniqueLogin</h2>
+      <a href="https://github.com/wajeht/unique-login-app" target="_blank">
+        <span class="iconify github" data-icon="mdi:github" data-inline="false"></span>
+      </a>
+    </div>
+    <div>
+      A simple over-engineered full-stack web application that spits out unique login credentials
+    </div>
+  </div>
+
+  <!-- -------------------- options -------------------- -->
+  <div class="app__options">
+    <div class="app__options-col">
+      <!-- -------------------- password -------------------- -->
+      <div class="app__options-password">
+        <h3>Password</h3>
+        <div>
+          <input
+            type="checkbox"
+            name="uppercase"
+            id="uppercase"
+            class="checkbox"
+            v-model="checkedPassword"
+            value="uppercase"
+          />
+          <label for="uppercase">Uppercase (A-Z)</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="lowercase"
+            id="lowercase"
+            class="checkbox"
+            v-model="checkedPassword"
+            value="lowercase"
+          />
+          <label for="lowercase">Lowercase (a-z)</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="number"
+            id="number"
+            class="checkbox"
+            v-model="checkedPassword"
+            value="number"
+          />
+          <label for="number">Number (0-9)</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="special"
+            id="special"
+            class="checkbox"
+            v-model="checkedPassword"
+            value="special"
+          />
+          <label for="special">Special (!@#$%^&*-.)</label>
+        </div>
+      </div>
+
+      <!-- -------------------- username -------------------- -->
+      <div class="app__options-username">
+        <h3>Username</h3>
+        <div>
+          <input
+            type="checkbox"
+            name="animals"
+            id="animals"
+            class="checkbox"
+            v-model="checkedUsername"
+            value="animals"
+          />
+          <label for="animals">Animal</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="verbs"
+            id="verbs"
+            class="checkbox"
+            v-model="checkedUsername"
+            value="verbs"
+          />
+          <label for="verbs">Verb</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="nouns"
+            id="nouns"
+            class="checkbox"
+            v-model="checkedUsername"
+            value="nouns"
+          />
+          <label for="nouns">Noun</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="adjectives"
+            id="adjectives"
+            class="checkbox"
+            v-model="checkedUsername"
+            value="adjectives"
+          />
+          <label for="adjectives">Adjective</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- -------------------- length -------------------- -->
+  <div class="app__options-length">
+    <h3>Length</h3>
+    <div class="splitter">
+      <input type="number" placeholder="14" v-model="enteredLength" />
+      <!-- -------------------- generate button -------------------- -->
+      <button type="submit" v-on:click="generateUniqueLogin">
+        <span class="iconify" data-icon="octicon:gear" data-inline="false"></span>
+      </button>
+    </div>
+  </div>
+  <!-- -------------------- result -------------------- -->
+  <div v-bind:class="showResult">
+    <div v-if="isError">
+      <p>{{errorMessage}}</p>
+    </div>
+    <div v-else-if="!isError && (result.username !== '' && result.password !== '')">
+      <p><span style="font-weight: bold">Username:</span> {{result.username}}</p>
+      <p><span style="font-weight: bold">Password:</span> {{result.password}}</p>
+    </div>
+    <div v-else>
+      <p>Choose prefer option and click generate!</p>
+    </div>
+  </div>
+</div>
