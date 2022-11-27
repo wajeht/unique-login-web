@@ -8,8 +8,18 @@ import { StatusCodes } from 'http-status-codes';
  * @returns The not-found.html file
  */
 export function notFoundHandler(req, res, next) {
-  return res.status(StatusCodes.NOT_FOUND).render('not-found.html', {
-    title: 'Unique Login: Not found',
+  const isApiPrefix = req.url.match(/\/api\//g);
+
+  if (!isApiPrefix) {
+    return res.status(StatusCodes.NOT_FOUND).render('not-found.html', {
+      title: 'Unique Login: Not found',
+    });
+  }
+
+  return res.status(StatusCodes.NOT_FOUND).json({
+    success: false,
+    request_url: req.originalUrl,
+    message: 'The resource does not exist!',
   });
 }
 
@@ -21,7 +31,18 @@ export function notFoundHandler(req, res, next) {
  * @returns The error.html file is being returned.
  */
 export function errorHandler(req, res, next) {
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).render('error.html', {
-    title: 'Unique Login: Error',
+  const isApiPrefix = req.url.match(/\/api\//g);
+
+  if (!isApiPrefix) {
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).render('error.html', {
+      title: 'Unique Login: Error',
+    });
+  }
+
+  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    success: false,
+    request_url: req.originalUrl,
+    message:
+      'The server encountered an internal error or misconfiguration and was unable to complete your request!',
   });
 }

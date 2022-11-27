@@ -6,7 +6,7 @@ const limiter = rateLimit({
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   message: {
-    status: 'fail',
+    success: false,
     request_url: async (request, response) => request.originalUr,
     message: 'Too many requests, please try again later.',
   },
