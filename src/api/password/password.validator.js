@@ -1,5 +1,4 @@
-import { check, checkSchema, param, body } from 'express-validator';
-import { isEqual } from 'lodash-es';
+import { param } from 'express-validator';
 import { ValidationError } from '../api.errors.js';
 
 /* Exporting a function that is checking the length of the password. */

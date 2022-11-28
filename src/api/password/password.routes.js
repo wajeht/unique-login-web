@@ -6,7 +6,7 @@ import { validator, catchAsyncErrors } from '../api.middlewares.js';
 import * as PasswordController from './password.controller.js';
 import * as PasswordValidator from './password.validator.js';
 
-password.get('/', PasswordController.getDefaultPassword);
+password.get('/', catchAsyncErrors(PasswordController.getDefaultPassword));
 
 password.get(
   '/:length',
