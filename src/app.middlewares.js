@@ -30,12 +30,21 @@ export function notFoundHandler(req, res, next) {
  * @param next - The next middleware function in the stack.
  * @returns The error.html file is being returned.
  */
-export function errorHandler(req, res, next) {
+export function errorHandler(err, req, res, next) {
   const isApiPrefix = req.url.match(/\/api\//g);
 
   if (!isApiPrefix) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).render('error.html', {
       title: 'Unique Login: Error',
+    });
+  }
+
+  if (err.name === 'CustomAPIError') {
+    return res.status(err.statusCode).json({
+      status: 'fail',
+      request_url: req.originalUrl,
+      message: process.env === 'development' ? err.stack : err.message,
+      errors: err?.errors,
     });
   }
 

@@ -1,13 +1,41 @@
 import { Router } from 'express';
 const password = Router();
 
-import * as PasswordController from './password.controller.js';
+import { validator, catchAsyncErrors } from '../api.middlewares.js';
 
-password.get('/', PasswordController.getDefaultPassword); // prettier-ignore
-password.get('/:length', PasswordController.getDefaultPasswordByLength); // prettier-ignore
-password.get('/:length/:one', PasswordController.getPasswordByLengthAndOneParam); // prettier-ignore
-password.get('/:length/:one/:two', PasswordController.getPasswordByLengthAndTwoParams); // prettier-ignore
-password.get('/:length/:one/:two/:three', PasswordController.getPasswordByLengthAndThreeParams); // prettier-ignore
-password.get('/:length/:one/:two/:three/:four', PasswordController.getPasswordByLengthAndFourParams); // prettier-ignore
+import * as PasswordController from './password.controller.js';
+import * as PasswordValidator from './password.validator.js';
+
+password.get('/', PasswordController.getDefaultPassword);
+
+password.get(
+  '/:length',
+  validator(PasswordValidator.getDefaultPasswordByLength),
+  catchAsyncErrors(PasswordController.getDefaultPasswordByLength),
+);
+
+password.get(
+  '/:length/:one',
+  validator(PasswordValidator.getPasswordByLengthAndOneParam),
+  PasswordController.getPasswordByLengthAndOneParam,
+);
+
+password.get(
+  '/:length/:one/:two',
+  validator(PasswordValidator.getPasswordByLengthAndTwoParams),
+  PasswordController.getPasswordByLengthAndTwoParams,
+);
+
+password.get(
+  '/:length/:one/:two/:three',
+  validator(PasswordValidator.getPasswordByLengthAndThreeParams),
+  PasswordController.getPasswordByLengthAndThreeParams,
+);
+
+password.get(
+  '/:length/:one/:two/:three/:four',
+  validator(PasswordValidator.getPasswordByLengthAndFourParams),
+  PasswordController.getPasswordByLengthAndFourParams,
+);
 
 export default password;
