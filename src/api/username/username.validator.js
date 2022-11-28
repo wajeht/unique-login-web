@@ -6,7 +6,7 @@ export const getUsernameByOneParam = [
   param()
     .optional()
     .custom((params) => {
-      const availableFields = ['animals', 'verbs', 'nouns', 'specials'];
+      const availableFields = ['animals', 'verbs', 'nouns', 'adjectives'];
       const fields = Object.values(params).some((field) => availableFields.includes(field));
       if (!fields) {
         throw new ValidationError(
@@ -22,7 +22,7 @@ export const getUsernameByTwoParam = [
   param()
     .optional()
     .custom((params) => {
-      const availableFields = ['animals', 'verbs', 'nouns', 'specials'];
+      const availableFields = ['animals', 'verbs', 'nouns', 'adjectives'];
       const fields = Object.values(params).some((field) => availableFields.includes(field));
       if (!fields) {
         throw new ValidationError(
@@ -38,7 +38,7 @@ export const getUsernameByThreeParam = [
   param()
     .optional()
     .custom((params) => {
-      const availableFields = ['animals', 'verbs', 'nouns', 'specials'];
+      const availableFields = ['animals', 'verbs', 'nouns', 'adjectives'];
       const fields = Object.values(params).some((field) => availableFields.includes(field));
       if (!fields) {
         throw new ValidationError(
@@ -54,7 +54,7 @@ export const getUsernameByFourParam = [
   param()
     .optional()
     .custom((params) => {
-      const availableFields = ['animals', 'verbs', 'nouns', 'specials'];
+      const availableFields = ['animals', 'verbs', 'nouns', 'adjectives'];
       const fields = Object.values(params).some((field) => availableFields.includes(field));
       if (!fields) {
         throw new ValidationError(

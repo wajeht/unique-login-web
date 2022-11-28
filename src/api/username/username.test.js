@@ -66,6 +66,7 @@ describe('GET /api/username/nouns', () => {
 describe('GET /api/username/adjectives', () => {
   it('should returns a username with just adjectives', async () => {
     const res = await request(app).get('/api/username/adjectives');
+    console.log(res.body.username);
     expect(Adjectives.includes(res.body.username)).toBeTruthy();
   });
 });
