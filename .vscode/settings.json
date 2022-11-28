@@ -6,5 +6,6 @@
         "nocheck",
         "nodenext",
         "wajeht"
-    ]
+    ],
+    "dotenv.enableAutocloaking": false
 }
