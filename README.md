@@ -1,5 +1,3 @@
-
-
 <p align="center">
 <a href="https://github.com/wajeht/windows_form_unique_login/releases">
 
@@ -15,8 +13,8 @@ A simple over engineered full-stack web application that spits out unique login 
 </p>
 
 # ⚠️ Depreciated
-This codebase is no longer actively maintained. The package will continue working, but support and changes are no longer provided.
 
+This codebase is no longer actively maintained. The package will continue working, but support and changes are no longer provided.
 
 # 💪 Motivation
 
@@ -25,7 +23,6 @@ I was inspired by the window's version that I've developed last year; I wanted t
 # 📺 Screenshots
 
 <img src="https://raw.githubusercontent.com/wajeht/unique-login-web/main/public/img/screenshot.png" width="250">
-
 
 # 📚 Technology
 
@@ -81,7 +78,9 @@ You must have Nodejs installed on your computer to have this project run locally
    ```
 
 # 📃 API end points
+
 We have two resources available for api call.
+
 - username
 - password
 

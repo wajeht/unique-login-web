@@ -1,11 +1,13 @@
 {
-	"liveServer.settings.port": 5500,
-	"cSpell.words": [
-        "asynciterable",
-        "middlewares",
-        "nocheck",
-        "nodenext",
-        "wajeht"
-    ],
-    "dotenv.enableAutocloaking": false
+  "liveServer.settings.port": 5500,
+  "cSpell.words": [
+    "asynciterable",
+    "iconify",
+    "middlewares",
+    "nocheck",
+    "nodenext",
+    "octicon",
+    "wajeht"
+],
+  "dotenv.enableAutocloaking": false
 }

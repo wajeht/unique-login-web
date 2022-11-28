@@ -1,5 +1,4 @@
 import { expect, it, describe } from 'vitest';
-
 import { splitStringOnUpperCase } from './helpers.js';
 
 describe('give a string of pascal case', () => {
