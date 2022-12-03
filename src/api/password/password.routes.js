@@ -66,6 +66,13 @@ password.get(
  * @param {string} first.path.required - the type of the character
  * @param {string} second.path.required - the type of the character
  * @summary get a mixed password with specific length and two specific characters
+ * @return {object} 200 - Success response
+ * @example response - 200 - example success response
+ * {
+ *  "success": true,
+ *  "request_url": "/api/password/20/uppercase/lowercase"
+ *  "password": "cWrQqEvtQQTuMEuiMPsf"
+ * }
  */
 password.get(
   '/:length/:one/:two',
@@ -85,7 +92,7 @@ password.get(
  * @example response - 200 - example success response
  * {
  *  "success": true,
- *  "request_url": "/api/password/20",
+ *  "request_url": "/api/password/20/uppercase/lowercase/number",
  *  "password": "cWrQqEvtQQTuMEuiMPsf"
  * }
  */
