@@ -8,6 +8,6 @@
     "nodenext",
     "octicon",
     "wajeht"
-],
+  ],
   "dotenv.enableAutocloaking": false
 }

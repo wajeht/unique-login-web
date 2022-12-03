@@ -7,6 +7,7 @@ import { StatusCodes } from 'http-status-codes';
  * @param next - The next middleware function in the stack.
  * @returns The not-found.html file
  */
+// eslint-disable-next-line no-unused-vars
 export function notFoundHandler(req, res, next) {
   const isApiPrefix = req.url.match(/\/api\//g);
 
@@ -30,6 +31,7 @@ export function notFoundHandler(req, res, next) {
  * @param next - The next middleware function in the stack.
  * @returns The error.html file is being returned.
  */
+// eslint-disable-next-line no-unused-vars
 export function errorHandler(err, req, res, next) {
   const isApiPrefix = req.url.match(/\/api\//g);
 
