@@ -12,6 +12,7 @@ import helmet from 'helmet';
 import swaggerOptions from './config/swagger.js';
 import rateLimit from './config/rateLimit.js';
 import apiRoutes from './api/api.routes.js';
+import appRoutes from './app.routes.js';
 import { errorHandler, notFoundHandler } from './app.middlewares.js';
 import { getHomePage } from './views/views.routes.js';
 
@@ -33,6 +34,7 @@ app.set('layout', '../layouts/main.html');
 app.use(expressLayouts);
 expressJSDocSwagger(app)(swaggerOptions);
 
+app.use(appRoutes);
 app.use(rateLimit);
 
 app.use('/api', apiRoutes);
