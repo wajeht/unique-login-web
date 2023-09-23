@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy:
-    needs: [format]
     name: Deploy to caprover
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
