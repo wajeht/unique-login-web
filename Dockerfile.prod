@@ -1,5 +1,7 @@
 FROM node:alpine
 
+RUN apk --no-cache add curl
+
 WORKDIR /usr/src/app
 
 COPY ./package.json ./
@@ -9,6 +11,8 @@ RUN npm install
 
 COPY ./ .
 
-EXPOSE 8081
+EXPOSE 8083
+
+HEALTHCHECK CMD curl -f http://localhost:8083/health-check || exit 1
 
 CMD ["npm", "run", "start"]
