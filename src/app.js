@@ -19,10 +19,28 @@ import { getHomePage } from './views/views.routes.js';
 const app = express();
 
 app.use(cors());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'default-src': ["'self'", 'plausible.jaw.dev'],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://unique-login.jaw.dev/',
+          'localhost',
+          'plausible.jaw.dev',
+          "'unsafe-eval'",
+        ],
+        'connect-src': ["'self'", 'https://api.iconify.design'],
+      },
+    },
+  }),
+);
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(helmet({ contentSecurityPolicy: false }));
 
 app.use(express.static(path.join(process.cwd(), 'public'), { maxAge: 31536000000 }));
 
