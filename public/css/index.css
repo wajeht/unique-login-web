@@ -157,6 +157,22 @@ a:visited {
   margin-bottom: 20px;
 }
 
+.app_footer {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  align-items: center;
+}
+
+.app_footer a {
+  text-decoration: none;
+}
+
+.app_footer a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* -------------------- fixes for desktop -------------------- */
 @media (min-width: 450px) {
   .app {
