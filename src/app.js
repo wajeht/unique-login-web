@@ -24,7 +24,16 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'default-src': ["'self'", 'plausible.jaw.dev'],
+        'default-src': [
+          "'self'",
+          'plausible.jaw.dev',
+          "'self'",
+          "'unsafe-inline'",
+          'https://unique-login.jaw.dev/',
+          'localhost',
+          'plausible.jaw.dev',
+          "'unsafe-eval'",
+        ],
         'script-src': [
           "'self'",
           "'unsafe-inline'",
